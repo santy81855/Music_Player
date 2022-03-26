@@ -1,0 +1,11 @@
+.StatusBar {
+  width: 100vw;
+  height: 27px;
+  background-color: var(--aud-secondary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
