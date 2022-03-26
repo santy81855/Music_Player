@@ -1,0 +1,11 @@
+.NavBar {
+  width: 100px;
+  height: calc(100vh - 27px);
+  background-color: var(--aud-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
