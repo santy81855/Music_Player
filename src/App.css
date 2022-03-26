@@ -1,38 +1,23 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  color: var(--aud-text);
+  background-color: var(--aud-error); /* You never want to see this! */
+
+  /* NOTE: These are arbitrary, just trying to prevent the app from becoming to small in-browser. */
+  /* Would be nice if we can find a way to prevent the screen from resizing, and keep an aspect ratio. */
+  min-width: 1000px;
+  min-height: 600px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-NavBar-and-MainPage {
+  background-color: var(--aud-error);
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-MainPage-and-PlayBar {
+  background-color: var(--aud-error);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

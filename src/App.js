@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import StatusBar from './components/StatusBar';
+import NavBar from './components/NavBar';
+import MainPage from './components/MainPage';
+import PlayBar from './components/PlayBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          OUR AMAZING MUSIC PLAYER.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
-        </a>
-      </header>
+    <div className = "App">
+      {/* App Layout */}
+      <StatusBar/>
+      <div className = "App-NavBar-and-MainPage">
+        <NavBar/>
+        <div className = "App-MainPage-and-PlayBar">
+          <MainPage/>
+          <PlayBar/>
+        </div>
+      </div>
     </div>
   );
 }
