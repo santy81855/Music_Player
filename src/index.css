@@ -1,5 +1,5 @@
-/* Using ':root' to store globals of pre-defined colors */
 :root {
+  /* Using ':root' to store globals of custom color-scheme */
   --aud-error: #bd1ab5;
   --aud-primary: #303238;
   --aud-secondary: #e1b20f;
