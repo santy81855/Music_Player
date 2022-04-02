@@ -1,10 +1,6 @@
 import React, { Component} from 'react';
 import './NavBarIcon.css';
 
-const update = () => {
-  console.log("you just clicked!");  
-};
-
 class NavBarIcon extends Component {
   constructor(props) {
     super(props);

@@ -1,5 +1,5 @@
 import './NavBar.css';
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import NavBarIcon from './NavBarIcon.js';
 
 // This works!
