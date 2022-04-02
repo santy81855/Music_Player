@@ -1,7 +1,7 @@
-.MainPage {
+.SearchSong {
   width: calc(100vw - 100px);
   height: calc(100vh - 100px - 27px);
-  background-color: var(--aud-error);
+  background-color: var(--aud-primary);
 
   display: flex;
   flex-direction: column;
