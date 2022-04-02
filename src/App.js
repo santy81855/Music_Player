@@ -16,6 +16,7 @@ function App() {
           <PlayBar/>
         </div>
       </div>
+      
     </div>
   );
 }
