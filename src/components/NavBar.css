@@ -1,6 +1,18 @@
 .NavBar {
-  width: 100px;
+  width: var(--aud-navBar-width);
   height: calc(100vh - 27px);
+  background-color: var(--aud-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: column;
+  justify-content: start;
+  text-align: center;
+}
+
+.button {
+  width: var(--aud-navBar-width);
+  height: calc(var(--aud-navBar-width) - 10px);
   background-color: var(--aud-background);
 
   display: flex;
@@ -8,4 +20,5 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: none;
 }
