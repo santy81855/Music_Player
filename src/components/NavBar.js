@@ -1,7 +1,7 @@
 import './NavBar.css';
 import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
-import { PageContext } from '../App';
+// import { PageContext } from '../App';
 
 // This works! but does not update
 // put in other file: "const {idx} = require('./NavBar.js');"
