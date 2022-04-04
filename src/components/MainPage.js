@@ -18,7 +18,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="MainPage">
-        {pages[this.index]}
+        {pages[this.props.selected]}
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import './NavBar.css';
 import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
+import MainPage from './MainPage';
+import PlayBar from './PlayBar';
 // import { PageContext } from '../App';
 
 // This works! but does not update
@@ -54,30 +56,38 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="NavBar">
-        {/* NavBar */}
+      <div className='fullContainer'>
+        <div className="NavBar">
+          {/* NavBar */}
 
-        <button className='button' onClick={this.toSettings}>
-          <NavBarIcon selected={this.state.page === 0} />
-        </button>
+          <button className='button' onClick={this.toSettings}>
+            <NavBarIcon selected={this.state.page === 0} />
+          </button>
 
-        <button className='button' onClick={this.toLibrary}>
-          <NavBarIcon selected={this.state.page === 1} />
-        </button>
+          <button className='button' onClick={this.toLibrary}>
+            <NavBarIcon selected={this.state.page === 1} />
+          </button>
 
-        <button className='button' onClick={this.toSearchSong}>
-          <NavBarIcon selected={this.state.page === 2} />
-        </button>
+          <button className='button' onClick={this.toSearchSong}>
+            <NavBarIcon selected={this.state.page === 2} />
+          </button>
 
-        <button className='button' onClick={this.toSearchPlaylist}>
-          <NavBarIcon selected={this.state.page === 3} />
-        </button>
+          <button className='button' onClick={this.toSearchPlaylist}>
+            <NavBarIcon selected={this.state.page === 3} />
+          </button>
 
-        <button className='button' onClick={this.toSearchArtist}>
-          <NavBarIcon selected={this.state.page === 4} />
-        </button>
+          <button className='button' onClick={this.toSearchArtist}>
+            <NavBarIcon selected={this.state.page === 4} />
+          </button>
 
-        {/* NavBar */}
+          {/* NavBar */}
+        </div>
+
+        
+        <div className = "App-MainPage-and-PlayBar">
+          <MainPage selected={this.state.page}/>
+          <PlayBar/>
+        </div>
       </div>
     );
   }
