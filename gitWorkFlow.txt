@@ -1,0 +1,30 @@
+1) Create/Move into the branch you will be working on (IMPORTANT).
+    - if you are making changes while in main you could potentially mess up the project, so always 
+    make sure you are in a separate branch.
+    - command to see all branches available: git branch -a
+    - command if you need to create a new branch: git branch branch_name
+    - command to move into a branch: git checkout branch_name
+
+2) Update your branch with the contents of the main branch to make sure everything you do is compatible.
+    - This is called merging 2 branches together.
+    - You are merging the main branch into your branch, not the other way around so main remains
+    unchanged while your branch gets all the contents on main.
+    command to merge: git merge main
+
+3) Work on the features that your branch is implementing.
+    - Store your changes often in case you mess something up by adding and commiting the changes:
+    1)command to track all file changes: git add .
+    2)command to commit all the changes: git commit -m "whatever your changes are"
+    
+4) When you are ready to upload the features to your branch so everyone can see them on github, you
+will push them "upstream" to your branch:
+    - This does not affect the main branch, this only uploads your branch so everyone can see it if
+    they checkout your branch.
+    command to push upstream into the repository: git push -u origin branch_name
+
+5) Once you are finished implementing whatever you were working on, you can create a pull request so that your branch's 
+content can be merged into the main branch. (Do not merge the contents yourself, always do a pull request)
+
+6) When your pull request has been accepted and your branch has been successfully merged into main, you can delete your branch.
+    - make sure you are absolutely positive you don't need anything from that branch before deleting.
+    - command to delete branch: git push origin --delete branch_name
