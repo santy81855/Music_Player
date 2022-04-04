@@ -9,3 +9,9 @@
   justify-content: center;
   text-align: center;
 }
+
+.App-NavBar-and-MainPage {
+  background-color: var(--aud-error);
+  display: flex;
+  flex-direction: row;
+}
