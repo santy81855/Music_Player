@@ -3,8 +3,8 @@ import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
 import MainPage from './MainPage';
 import PlayBar from './PlayBar';
-// import { PageContext } from '../App';
 
+// DEPRECATED: ManPage now updates through props from 'this.state.page'
 // This works! but does not update
 // put in other file: "const {idx} = require('./NavBar.js');"
 export var idx = 1;
@@ -24,6 +24,8 @@ class NavBar extends React.Component {
     this.toSearchArtist = this.toSearchArtist.bind(this);
   }
 
+  // TODO: We can remove all of these methods:
+  // Remove the 'idx' and let the onClick() method handle the setState()
   toSettings() {
     this.setState(state => ({ page: 0 }));
     idx = 0;
@@ -57,9 +59,8 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className='fullContainer'>
+        {/* NavBar */}
         <div className="NavBar">
-          {/* NavBar */}
-
           <button className='button' onClick={this.toSettings}>
             <NavBarIcon selected={this.state.page === 0} />
           </button>
@@ -79,15 +80,14 @@ class NavBar extends React.Component {
           <button className='button' onClick={this.toSearchArtist}>
             <NavBarIcon selected={this.state.page === 4} />
           </button>
-
-          {/* NavBar */}
         </div>
 
-        
+        {/* Nested App */}
         <div className = "App-MainPage-and-PlayBar">
           <MainPage selected={this.state.page}/>
           <PlayBar/>
         </div>
+        
       </div>
     );
   }
