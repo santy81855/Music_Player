@@ -1,7 +1,8 @@
 .SearchArtist {
   width: calc(100vw - 100px);
   height: calc(100vh - 100px - 27px);
-  background-color: var(--aud-primary);
+  /* background-color: var(--aud-primary); */
+  background-color: var(--aud-focus);
 
   display: flex;
   flex-direction: column;

@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
 import './StatusBar.css';
+import React from 'react';
+import NavBar from './NavBar.js';
 
-class StatusBar extends Component {
+class StatusBar extends React.Component {
   render() {
     return (
-      <div className="StatusBar">
-        {/* StatusBar */}
-        StatusBar
+      <div>
+        <div className="StatusBar">
+          {/* StatusBar */}
+          StatusBar
+        </div>
 
-        
+        <div className = "App-NavBar-and-MainPage">
+          <NavBar/>
+        </div>
       </div>
     );
   }

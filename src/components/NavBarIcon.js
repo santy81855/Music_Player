@@ -1,34 +1,17 @@
-import React, { Component} from 'react';
 import './NavBarIcon.css';
+import React from 'react';
 
-class NavBarIcon extends Component {
-  constructor(props) {
-    super(props);
-    this.selected = props.selected | false;
-    this.handleClick = props.handleClick;
-  }
-
+class NavBarIcon extends React.Component {
   render() {
-    if (this.selected)
-      return (
+    return (
       <div className="Box">
-        <div className='Selected'> 
-          <div className='Icon' onClick={this.handleClick}>
+        <div className={this.props.selected ? 'Selected' : 'NotSelected'}> 
+          <div className='Icon'>
             {/* O */}
           </div>
         </div>
       </div>
     );
-    else
-      return (
-        <div className="Box">
-          <div className='NotSelected'>   
-            <div className='Icon' onClick={this.handleClick}>
-              {/* O */}
-            </div>
-          </div>
-        </div>
-      );
   }
 }
 
