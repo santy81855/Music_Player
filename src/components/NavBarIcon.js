@@ -1,7 +1,7 @@
-import React, { Component} from 'react';
 import './NavBarIcon.css';
+import React from 'react';
 
-class NavBarIcon extends Component {
+class NavBarIcon extends React.Component {
   render() {
     return (
       <div className="Box">
