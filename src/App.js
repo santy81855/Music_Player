@@ -20,7 +20,10 @@ function App() {
             {/* <PlayBar/> */}
           {/* </div> */}
       {/* </div> */}
-
+      
+      {/* We are now nesting the above structure within the components. */}
+      {/* Not ideal in my mind, but is the "best" way to cascade props between components */}
+      
       <StatusBar/>
       
     </div>
