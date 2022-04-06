@@ -1,0 +1,47 @@
+users:
+library of playlists
+last song
+waslastsongfromplaylist
+last playlist
+last location
+settings (if we stick to it)
+----------
+[
+  {
+    "library of playlists": 
+    [
+      "playlist objects"
+    ],
+    "last song": "id",
+    "waslastsongfromplaylist": "boolean",
+    "last playlist": "String",
+    "last location": "String",
+    "settings (if we stick to it)": {
+
+    }
+  }
+]
+---------
+songs:
+id
+title
+artist
+homeplaylist/album
+release year
+cover art
+mp3 file/filepath
+duration
+-----------
+[
+  {
+    "id": "int",
+    "title": "String",
+    "artist": "String",
+    "homeplaylist/album": "String",
+    "release year": "String",
+    "cover art": "String directory from cwd in folders",
+    "mp3 file/filepath": "String directory from cwd in folders",
+    "duration": "int seconds"
+  }
+]
+-----------

@@ -1,0 +1,16 @@
+[
+  {
+    "username": "username",
+    "library of playlists": 
+    [
+      "playlist objects"
+    ],
+    "last song": "id",
+    "waslastsongfromplaylist": "boolean",
+    "last playlist": "String",
+    "last location": "String",
+    "settings (if we stick to it)": {
+      "theme": "october"
+    }
+  }
+]
