@@ -11,13 +11,12 @@
   },
   {
     "id": "2",
-    "title": "Cyber Crime Story",
-    "artist": "FSM Team ESCP",
-    "homeplaylist/album": "Cyber Crime Story",
-    "release year": 2019,
-    "cover art": "/default.jpg",
-    "mp3 file/filepath": "\fsm-team-escp-cyber-crime-story.mp3",
-    "duration": "5:12"
+    "title": "Ukelele",
+    "artist": "Bensound",
+    "homeplaylist/album": "www.bensound.com",
+    "release year": 2022,
+    "cover_art": "https://www.bensound.com/bensound-img/ukulele.jpg",
+    "mp3address": "https://www.bensound.com/bensound-music/bensound-ukulele.mp3"
   },
   {
     "id": "int",
