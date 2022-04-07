@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Kalimba",
+    "artist": "unknown",
+    "homeplaylist/album": "Kalimba",
+    "release year": 2019,
+    "cover art": "/kalimba.jpg",
+    "mp3file_filepath": "/Kalimba.mp3",
+    "duration": "5:48"
+  },
+  {
+    "id": "2",
+    "title": "Cyber Crime Story",
+    "artist": "FSM Team ESCP",
+    "homeplaylist/album": "Cyber Crime Story",
+    "release year": 2019,
+    "cover art": "/default.jpg",
+    "mp3 file/filepath": "\fsm-team-escp-cyber-crime-story.mp3",
+    "duration": "5:12"
+  },
+  {
+    "id": "int",
+    "title": "String",
+    "artist": "String",
+    "homeplaylist/album": "String",
+    "release year": "String",
+    "cover art": "/default.jpg",
+    "mp3 file/filepath": "String directory from cwd in folders",
+    "duration": "int seconds"
+  }
+]

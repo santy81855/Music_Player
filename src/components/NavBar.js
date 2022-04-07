@@ -54,7 +54,6 @@ class NavBar extends React.Component {
     idx = 4;
     console.log(idx);
   }
-
   render() {
     return (
       <div className='fullContainer'>
