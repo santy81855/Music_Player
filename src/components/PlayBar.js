@@ -22,24 +22,25 @@ function PlayBar(props){
     const [trackIndex, setTrackIndex] = useState(0);
     const handleClickPrevious = () => {
       setTrackIndex((currentTrack) =>
-        currentTrack === 0 ? SongData.length - 1 : currentTrack - 1
+        currentTrack === 0 ? props.playlist.songs.length - 1 : currentTrack - 1
       );
     };
   
     const handleClickNext = () => {
       setTrackIndex((currentTrack) =>
-        currentTrack < SongData.length - 1 ? currentTrack + 1 : 0
+        currentTrack < props.playlist.songs.length - 1 ? currentTrack + 1 : 0
       );
     };
+
+
     return (
       <div className="PlayBar">
-      <img src={SongData[trackIndex].cover_art}/>
+      <img src={SongData[props.playlist.songs[trackIndex]].cover_art}/>
       <AudioPlayer
       autoPlay
-      src={SongData[trackIndex].mp3address}
+      src={SongData[props.playlist.songs[trackIndex]].mp3address}
       onPlay={e => console.log("onPlay")}
       onPause={e=>console.log("pause")}
-      //footer={SongData[trackIndex].footer.length > 0 ? SongData[trackIndex].footer : null}
       onClickPrevious={handleClickPrevious}
       onClickNext={handleClickNext}
       onEnded={handleClickNext}
