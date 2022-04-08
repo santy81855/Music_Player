@@ -3,7 +3,8 @@ import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
 import MainPage from './MainPage';
 import PlayBar from './PlayBar';
-
+import Playlists from '../databases/songs/playlists.json';
+import Songs from '../databases/songs/songs.json';
 // DEPRECATED: ManPage now updates through props from 'this.state.page'
 // This works! but does not update
 // put in other file: "const {idx} = require('./NavBar.js');"
@@ -83,7 +84,7 @@ class NavBar extends React.Component {
         {/* Nested App */}
         <div className = "App-MainPage-and-PlayBar">
           <MainPage selected={this.state.page}/>
-          <PlayBar/>
+          <PlayBar playlist={Playlists[0]} />
         </div>
         
       </div>
