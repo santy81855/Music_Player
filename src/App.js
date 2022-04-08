@@ -3,6 +3,8 @@ import React from 'react';
 import StatusBar from './components/StatusBar';
 
 function App() {
+  document.title="Musaic"
+  // need an icon
   return (
     <div className = "App">
       {/* This is the original app structure, now nested within components */}
