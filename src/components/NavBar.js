@@ -12,7 +12,6 @@ export var idx = 1;
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       page: 1,
     };
@@ -55,7 +54,6 @@ class NavBar extends React.Component {
     idx = 4;
     console.log(idx);
   }
-
   render() {
     return (
       <div className='fullContainer'>
