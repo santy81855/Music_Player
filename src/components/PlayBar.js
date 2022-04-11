@@ -35,18 +35,16 @@ function PlayBar(props){
 
     return (
       <div className="PlayBar">
-      <img src={SongData[props.playlist.songs[trackIndex]].cover_art}/>
-      <AudioPlayer
-      autoPlay
-      src={SongData[props.playlist.songs[trackIndex]].mp3address}
-      onPlay={e => console.log("onPlay")}
-      onPause={e=>console.log("pause")}
-      onClickPrevious={handleClickPrevious}
-      onClickNext={handleClickNext}
-      onEnded={handleClickNext}
-    />
-        {/* PlayBar */}
-        PlayBar
+        {/* <img src={SongData[props.playlist.songs[trackIndex]].cover_art}/> */}
+        <AudioPlayer
+          autoPlay
+          src={SongData[props.playlist.songs[trackIndex]].mp3address}
+          onPlay={e => console.log("onPlay")}
+          onPause={e=>console.log("pause")}
+          onClickPrevious={handleClickPrevious}
+          onClickNext={handleClickNext}
+          onEnded={handleClickNext}
+        />
       </div>
     );
   //}
