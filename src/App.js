@@ -3,7 +3,8 @@ import React from 'react';
 import StatusBar from './components/StatusBar';
 
 function App() {
-  document.title="Musaic"
+  document.title="Aud.io"
+  
   // need an icon
   return (
     <div className = "App">

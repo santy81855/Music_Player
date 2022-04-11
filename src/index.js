@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  //document.title="LESS GOO",
   <React.StrictMode>
     <App />
   </React.StrictMode>,
