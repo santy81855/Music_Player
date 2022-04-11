@@ -1,7 +1,7 @@
 :root {
   /* Using ':root' to store globals of custom color-scheme */
   --aud-error: #bd1ab5;
-  --aud-secondary: #  ;
+  --aud-secondary: #e1b20f;
   --aud-focus: #4d535b;
   --aud-primary: #303238;
   --aud-background: #24282b;
