@@ -2,7 +2,9 @@ import './PlayBar.css';
 import React from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+// import 'react-h5-audio-player/src/styles.scss';
 import SongData from '../databases/songs/songs.json';
+import PlayBarStyle from './PlayBarStyle.scss';
 import {useState} from "react";
 function PlayBar(props){
 // class PlayBar extends React.Component {
@@ -37,6 +39,7 @@ function PlayBar(props){
       <div className="PlayBar">
         {/* <img src={SongData[props.playlist.songs[trackIndex]].cover_art}/> */}
         <AudioPlayer
+          style={PlayBarStyle}
           autoPlay={false}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
           onPlay={e => console.log("onPlay")}
