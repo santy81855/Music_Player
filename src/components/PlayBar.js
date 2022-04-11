@@ -37,7 +37,7 @@ function PlayBar(props){
       <div className="PlayBar">
         {/* <img src={SongData[props.playlist.songs[trackIndex]].cover_art}/> */}
         <AudioPlayer
-          autoPlay
+          autoPlay={false}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
           onPlay={e => console.log("onPlay")}
           onPause={e=>console.log("pause")}
