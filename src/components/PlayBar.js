@@ -41,6 +41,7 @@ function PlayBar(props){
         <AudioPlayer
           style={PlayBarStyle}
           autoPlay={false}
+          volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
           onPlay={e => console.log("onPlay")}
           onPause={e=>console.log("pause")}
