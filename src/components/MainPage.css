@@ -1,6 +1,6 @@
 .MainPage {
   width: calc(100vw - 100px);
-  height: calc(100vh - 100px - 27px);
+  height: calc(100vh - 120px - 27px);
   background-color: var(--aud-error);
 
   display: flex;
