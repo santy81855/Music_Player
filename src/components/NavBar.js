@@ -5,10 +5,12 @@ import MainPage from './MainPage';
 import PlayBar from './PlayBar';
 import Playlists from '../databases/songs/playlists.json';
 import Songs from '../databases/songs/songs.json';
+import libraryPNG from '../library.png';
 // DEPRECATED: ManPage now updates through props from 'this.state.page'
 // This works! but does not update
 // put in other file: "const {idx} = require('./NavBar.js');"
 export var idx = 1;
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -61,11 +63,11 @@ class NavBar extends React.Component {
         {/* NavBar */}
         <div className="NavBar">
           <button className='button' onClick={this.toSettings}>
-            <NavBarIcon selected={this.state.page === 0} />
+            <NavBarIcon selected={this.state.page === 0}/>
           </button>
 
           <button className='button' onClick={this.toLibrary}>
-            <NavBarIcon selected={this.state.page === 1} />
+            <NavBarIcon selected={this.state.page === 1} image={libraryPNG}/>
           </button>
 
           <button className='button' onClick={this.toSearchSong}>
