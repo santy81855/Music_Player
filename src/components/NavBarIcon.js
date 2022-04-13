@@ -9,7 +9,11 @@ class NavBarIcon extends React.Component {
         <div className={this.props.selected ? 'Selected' : 'NotSelected'}> 
           <div className='Icon'>
             {/* O */}
-            <img src={this.props.image} alt="icon"/>
+            <img
+              src={this.props.selected ? this.props.imageSelect : this.props.image} 
+              className="PNG"
+              alt="icon"
+            />
           </div>
         </div>
       </div>

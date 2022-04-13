@@ -23,6 +23,11 @@
   color: black; /* For text color */
 }
 
+.PNG {
+  width: 45px;
+  height: 45px;
+}
+
 .Selected {
   width: 66px;
   height: 66px;
