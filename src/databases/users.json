@@ -1,6 +1,7 @@
 [
   {
     "username": "username",
+    "ip": "string",
     "token": "token",
     "library of playlists": 
     [
@@ -22,4 +23,3 @@
     }
   }
 ]
-
