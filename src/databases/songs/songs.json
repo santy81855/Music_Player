@@ -1,9 +1,9 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "title": "Ukelele",
     "artist": "Bensound",
-    "homeplaylist/album": "Bensound",
+    "homeplaylist": "Bensound",
     "genre": "Acoustic",
     "release_year": 2012,
     "cover_art": "https://www.bensound.com/bensound-img/ukulele.jpg",
@@ -11,10 +11,10 @@
     "credit": "www.bensound.com"
   },
   {
-    "id": 2,
+    "id": 1,
     "title": "Dubstep",
     "artist": "Bensound",
-    "homeplaylist/album": "Bensound",
+    "homeplaylist": "Bensound",
     "genre": "Electronica",
     "release_year": 2017,
     "cover_art": "https://www.bensound.com/bensound-img/dubstep.jpg",
@@ -22,10 +22,10 @@
     "credit": "www.bensound.com"
   },
   {
-    "id": 3,
+    "id": 2,
     "title": "Pop Dance",
     "artist": "Bensound",
-    "homeplaylist/album": "Bensound",
+    "homeplaylist": "Bensound",
     "genre": "Electronica",
     "release_year": 2017,
     "cover_art": "https://www.bensound.com/bensound-img/popdance.jpg",
@@ -33,10 +33,10 @@
     "credit": "www.bensound.com"
   },
   {
-    "id": 4,
+    "id": 3,
     "title": "Jazzy Frenchy",
     "artist": "Bensound",
-    "homeplaylist/album": "Bensound",
+    "homeplaylist": "Bensound",
     "genre": "Jazz",
     "release_year": 2014,
     "cover_art": "https://www.bensound.com/bensound-img/jazzyfrenchy.jpg",
@@ -44,10 +44,10 @@
     "credit": "www.bensound.com"
   },
   {
-    "id": 5,
+    "id": 4,
     "title": "The Jazz Piano",
     "artist": "Bensound",
-    "homeplaylist/album": "Bensound",
+    "homeplaylist": "Bensound",
     "genre": "Jazz",
     "release_year": 2019,
     "cover_art": "https://www.bensound.com/bensound-img/thejazzpiano.jpg",
@@ -55,10 +55,10 @@
     "credit": "www.bensound.com"
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Beam",
     "artist": "Gabriella, Knoir, Zeneth",
-    "homeplaylist/album": "NCS",
+    "homeplaylist": "NCS",
     "genre": "Trap",
     "release_year": 2022,
     "cover_art": "http://i3.ytimg.com/vi/5lrWJnr7l5I/hqdefault.jpg",
@@ -66,10 +66,10 @@
     "credit": "Song: Zeneth & Knoir - Beam (ft. Gabriella) [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://NCS.io/Beam, Watch: http://youtu.be/"
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Heroes Tonight",
     "artist": "Janji, Johnning",
-    "homeplaylist/album": "NCS",
+    "homeplaylist": "NCS",
     "genre": "Pop, EDM",
     "release_year": 2015,
     "cover_art": "http://i3.ytimg.com/vi/3nQNiWdeH2Q/hqdefault.jpg",
@@ -77,10 +77,10 @@
     "credit": "Song: Janji - Heroes Tonight (feat. Johnning) [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/ht, Watch: http://youtu.be/3nQNiWdeH2Q"
   },
   {
-    "id": 8,
+    "id": 7,
     "title": "Why We Lose",
     "artist": "Cartoon, Coleman Trapp",
-    "homeplaylist/album": "NCS",
+    "homeplaylist": "NCS",
     "genre": "Pop",
     "release_year": 2015,
     "cover_art": "http://i3.ytimg.com/vi/zyXmsVwZqX4/hqdefault.jpg",
@@ -88,10 +88,10 @@
     "credit": "Song: Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/whywelose, Watch: http://youtu.be/zyXmsVwZqX4"
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "Tropic Love",
     "artist": "Diviners, Contacreast",
-    "homeplaylist/album": "NCS",
+    "homeplaylist": "NCS",
     "genre": "Pop, EDM, Electronic",
     "release_year": 2015,
     "cover_art": "http://i3.ytimg.com/vi/u6RJv7f__Mg/hqdefault.jpg",
@@ -99,10 +99,10 @@
     "credit": "Song: Diviners feat. Contacreast - Tropic Love [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/tropiclove, Watch: http://youtu.be/u6RJv7f__Mg"
   },
   {
-    "id": 10,
+    "id": 9,
     "title": "Like Me",
     "artist": "Britt Lari, T-Mass",
-    "homeplaylist/album": "NCS",
+    "homeplaylist": "NCS",
     "genre": "Electronic, Chill",
     "release_year": 2020,
     "cover_art": "http://i3.ytimg.com/vi/iQrYoJ5tRV8/hqdefault.jpg",

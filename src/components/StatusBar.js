@@ -2,20 +2,32 @@ import './StatusBar.css';
 import React from 'react';
 import NavBar from './NavBar.js';
 import Login from './Login.js';
+import {useAuth0} from '@auth0/auth0-react';
 
 class StatusBar extends React.Component {
   
   // Renders either the login screen or the main app
-  isLoggedIn = true;
-  
+  isLoggedIn = false;
+
   render() {
-    
-    if (this.isLoggedIn)
-    {
       return (
         <div>
           <div className="StatusBar">
-            {/* StatusBar */}
+            {/*StatusBar*/}
+            StatusBar
+          </div>
+          <div className = "App-NavBar-and-MainPage">
+            <NavBar/>
+          </div>
+        </div>
+      );
+    /*if (this.isLoggedIn)
+    {
+      console.log('logged in');
+      return (
+        <div>
+          <div className="StatusBar">
+            {/* StatusBar}
             StatusBar
           </div>
   
@@ -30,7 +42,7 @@ class StatusBar extends React.Component {
       return (
         <div>
           <div className="StatusBar">
-            {/* StatusBar */}
+            {/* StatusBar }
             StatusBar
           </div>
   
@@ -39,7 +51,7 @@ class StatusBar extends React.Component {
           </div>
         </div>
       );
-    }
+    }*/
   }
 }
 

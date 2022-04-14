@@ -43,7 +43,7 @@ function PlayBar(props){
           autoPlay={false}
           volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
-          header={`Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}"`}
+          header={`Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}" by ${SongData[props.playlist.songs[trackIndex]].artist}`}
           onPlay={e => console.log("onPlay")}
           onPause={e=>console.log("pause")}
           onClickPrevious={handleClickPrevious}
