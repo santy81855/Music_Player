@@ -8,10 +8,11 @@ class StatusBar extends React.Component {
   
   // Renders either the login screen or the main app
   isLoggedIn = false;
-  
+
   render() {
     if (this.isLoggedIn)
     {
+      console.log('logged in');
       return (
         <div>
           <div className="StatusBar">
