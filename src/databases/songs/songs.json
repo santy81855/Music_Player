@@ -5,7 +5,7 @@
     "artist": "Bensound",
     "homeplaylist": "Bensound",
     "genre": "Acoustic",
-    "release year": "2012",
+    "release_year": 2012,
     "cover_art": "https://www.bensound.com/bensound-img/ukulele.jpg",
     "mp3address": "https://www.bensound.com/bensound-music/bensound-ukulele.mp3",
     "credit": "www.bensound.com"
@@ -16,7 +16,7 @@
     "artist": "Bensound",
     "homeplaylist": "Bensound",
     "genre": "Electronica",
-    "release year": "2017",
+    "release_year": 2017,
     "cover_art": "https://www.bensound.com/bensound-img/dubstep.jpg",
     "mp3address": "https://www.bensound.com/bensound-music/bensound-dubstep.mp3",
     "credit": "www.bensound.com"
@@ -27,7 +27,7 @@
     "artist": "Bensound",
     "homeplaylist": "Bensound",
     "genre": "Electronica",
-    "release year": "2017",
+    "release_year": 2017,
     "cover_art": "https://www.bensound.com/bensound-img/popdance.jpg",
     "mp3address": "https://www.bensound.com/bensound-music/bensound-popdance.mp3",
     "credit": "www.bensound.com"
@@ -38,7 +38,7 @@
     "artist": "Bensound",
     "homeplaylist": "Bensound",
     "genre": "Jazz",
-    "release year": 2014,
+    "release_year": 2014,
     "cover_art": "https://www.bensound.com/bensound-img/jazzyfrenchy.jpg",
     "mp3address": "https://www.bensound.com/bensound-music/bensound-jazzyfrenchy.mp3",
     "credit": "www.bensound.com"
@@ -49,7 +49,7 @@
     "artist": "Bensound",
     "homeplaylist": "Bensound",
     "genre": "Jazz",
-    "release year": 2019,
+    "release_year": 2019,
     "cover_art": "https://www.bensound.com/bensound-img/thejazzpiano.jpg",
     "mp3address": "https://www.bensound.com/bensound-music/bensound-thejazzpiano.mp3",
     "credit": "www.bensound.com"
@@ -60,7 +60,7 @@
     "artist": "Gabriella, Knoir, Zeneth",
     "homeplaylist": "NCS",
     "genre": "Trap",
-    "release year": 2022,
+    "release_year": 2022,
     "cover_art": "http://i3.ytimg.com/vi/5lrWJnr7l5I/hqdefault.jpg",
     "mp3address": "https://cdn.discordapp.com/attachments/930155001198837791/961794715878055956/Zeneth__Knoir_-_Beam_ft._Gabriella_NCS_Release_2.mp3",
     "credit": "Song: Zeneth & Knoir - Beam (ft. Gabriella) [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://NCS.io/Beam, Watch: http://youtu.be/"
@@ -71,7 +71,7 @@
     "artist": "Janji, Johnning",
     "homeplaylist": "NCS",
     "genre": "Pop, EDM",
-    "release year": 2015,
+    "release_year": 2015,
     "cover_art": "http://i3.ytimg.com/vi/3nQNiWdeH2Q/hqdefault.jpg",
     "mp3address": "https://cdn.discordapp.com/attachments/930155001198837791/961798762206990386/Janji_-_Heroes_Tonight_feat._Johnning_NCS_Release.mp3",
     "credit": "Song: Janji - Heroes Tonight (feat. Johnning) [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/ht, Watch: http://youtu.be/3nQNiWdeH2Q"
@@ -82,7 +82,7 @@
     "artist": "Cartoon, Coleman Trapp",
     "homeplaylist": "NCS",
     "genre": "Pop",
-    "release year": 2015,
+    "release_year": 2015,
     "cover_art": "http://i3.ytimg.com/vi/zyXmsVwZqX4/hqdefault.jpg",
     "mp3address": "https://cdn.discordapp.com/attachments/930155001198837791/961800422262190190/Cartoon_-_Why_We_Lose_feat._Coleman_Trapp_NCS_Release.mp3",
     "credit": "Song: Cartoon - Why We Lose (feat. Coleman Trapp) [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/whywelose, Watch: http://youtu.be/zyXmsVwZqX4"
@@ -93,7 +93,7 @@
     "artist": "Diviners, Contacreast",
     "homeplaylist": "NCS",
     "genre": "Pop, EDM, Electronic",
-    "release year": 2015,
+    "release_year": 2015,
     "cover_art": "http://i3.ytimg.com/vi/u6RJv7f__Mg/hqdefault.jpg",
     "mp3address": "https://cdn.discordapp.com/attachments/930155001198837791/961801237026721812/Diviners_feat._Contacreast_-_Tropic_Love_NCS_Release.mp3",
     "credit": "Song: Diviners feat. Contacreast - Tropic Love [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/tropiclove, Watch: http://youtu.be/u6RJv7f__Mg"
@@ -104,7 +104,7 @@
     "artist": "Britt Lari, T-Mass",
     "homeplaylist": "NCS",
     "genre": "Electronic, Chill",
-    "release year": 2020,
+    "release_year": 2020,
     "cover_art": "http://i3.ytimg.com/vi/iQrYoJ5tRV8/hqdefault.jpg",
     "mp3address": "https://cdn.discordapp.com/attachments/930155001198837791/961802753506693130/T-Mass__Britt_Lari_-_Like_Me_NCS_Release.mp3",
     "credit": "Song: T-Mass & Britt Lari - Like Me [NCS Release], Music provided by NoCopyrightSounds, Free Download/Stream: http://ncs.io/LikeMe, Watch: http://youtu.be/iQrYoJ5tRV8"
