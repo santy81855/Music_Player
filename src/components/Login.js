@@ -3,6 +3,7 @@ import React from 'react';
 import {useAuth0} from '@auth0/auth0-react';
 import userbase from '../databases/users.json';
 import NavBar from './NavBar';
+import StatusBar from './StatusBar';
 
 //class Login extends React.Component {
 function Login(props){
@@ -15,22 +16,17 @@ function Login(props){
       isAuthenticated
     } = useAuth0();
 
-    if (isAuthenticated == true){
+    if(isAuthenticated == true){
       console.log(user.given_name)
-      return (
-        <div className = "App-NavBar-and-MainPage">
-          <NavBar/>
-        </div>
-      )
+    }else{
+      console.log("not");
     }
 
-    return isAuthenticated == true ? (
+    return (isAuthenticated == true) ?
       <div className = "App-NavBar-and-MainPage">
-        <NavBar/>
+        <StatusBar />
       </div>
-    )
     :
-    (
       <div>
         <div className="Login">
           Login Page
@@ -46,7 +42,7 @@ function Login(props){
       )}
         </div>
       </div>
-    );
+
   //}
 }
 

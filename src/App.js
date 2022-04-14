@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import Login from './components/Login';
 import StatusBar from './components/StatusBar';
 import {useAuth0} from '@auth0/auth0-react';
 import userbase from './databases/users.json';
@@ -27,7 +28,7 @@ function App() {
       
       {/* We are now nesting the above structure within the components. */}
       {/* Not ideal in my mind, but is the "best" way to cascade props between components */}
-      <StatusBar/>
+      <Login />
     </div>
   );
 }
