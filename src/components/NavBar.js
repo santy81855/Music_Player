@@ -99,7 +99,7 @@ class NavBar extends React.Component {
 
         {/* Nested App */}
         <div className = "App-MainPage-and-PlayBar">
-          <MainPage selected={this.state.page}/>
+          <MainPage selected={this.state.page} />
           <PlayBar playlist={Playlists[0]} />
         </div>
         
