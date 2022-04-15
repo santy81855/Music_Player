@@ -7,8 +7,6 @@ class Settings extends Component {
       <div className="Settings">
         {/* MainPage */}
         Settings
-
-        
       </div>
     );
   }
