@@ -34,7 +34,7 @@ function Login(props){
       
           <button onClick={loginWithPopup}>Login with popup</button>
         
-          <button onClick={logout}>Guest</button>
+          <button onClick={logout}>Logout</button>
         
       <h3>User is { isAuthenticated ? "Logged in" : "Not logged in" }</h3>
       { isAuthenticated && (
