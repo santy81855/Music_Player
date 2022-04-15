@@ -27,7 +27,7 @@ class StatusBar extends React.Component {
       return (
         <div>
           <div className="StatusBar">
-            {/* StatusBar}
+            {/*StatusBar}
             StatusBar
           </div>
   
