@@ -17,7 +17,7 @@ class StatusBar extends React.Component {
             StatusBar
           </div>
           <div className = "App-NavBar-and-MainPage">
-            <NavBar/>
+            <NavBar logoutFunction = {this.props.logoutFunction} />
           </div>
         </div>
       );
@@ -27,7 +27,7 @@ class StatusBar extends React.Component {
       return (
         <div>
           <div className="StatusBar">
-            {/* StatusBar}
+            {/*StatusBar}
             StatusBar
           </div>
   

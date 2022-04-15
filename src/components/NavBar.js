@@ -4,6 +4,7 @@ import NavBarIcon from './NavBarIcon.js';
 import MainPage from './MainPage';
 import PlayBar from './PlayBar';
 import Playlists from '../databases/songs/playlists.json';
+import {useAuth0} from '@auth0/auth0-react';
 
 import settingsPNG from '../icons/settings.png';
 import settingsSelectPNG from '../icons/settings_selected.png';
@@ -99,7 +100,7 @@ class NavBar extends React.Component {
 
         {/* Nested App */}
         <div className = "App-MainPage-and-PlayBar">
-          <MainPage selected={this.state.page}/>
+          <MainPage selected={this.state.page} logoutFunction = {this.props.logoutFunction}/>
           <PlayBar playlist={Playlists[0]} />
         </div>
         

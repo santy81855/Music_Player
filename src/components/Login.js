@@ -24,7 +24,7 @@ function Login(props){
 
     return (isAuthenticated == true) ?
       <div className = "App-NavBar-and-MainPage">
-        <StatusBar />
+        <StatusBar logoutFunction = {logout} />
       </div>
     :
       <div>
@@ -34,7 +34,7 @@ function Login(props){
       
           <button onClick={loginWithPopup}>Login with popup</button>
         
-          <button onClick={logout}>Logout</button>
+          <button onClick={logout}>Guest</button>
         
       <h3>User is { isAuthenticated ? "Logged in" : "Not logged in" }</h3>
       { isAuthenticated && (
