@@ -29,7 +29,6 @@ function PlayBar(props){
     };
   
     const handleClickNext = () => {
-      console.log("nextclick")
       setTrackIndex((currentTrack) =>
         currentTrack < props.playlist.songs.length - 1 ? currentTrack + 1 : 0
       );
@@ -47,9 +46,9 @@ function PlayBar(props){
           volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
           header={`Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}" by ${SongData[props.playlist.songs[trackIndex]].artist}`}
-          onPlay={e => console.log("onPlay")}
-          onPause={e=>console.log("pause")}
-          onClickPrevious={console.log("prev")}
+          //onPlay={e => console.log("onPlay")}
+          //onPause={e=>console.log("pause")}
+          onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
           onEnded={handleClickNext}
           onClickForward={handleClickNext}
