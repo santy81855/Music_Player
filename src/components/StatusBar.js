@@ -17,7 +17,7 @@ class StatusBar extends React.Component {
             StatusBar
           </div>
           <div className = "App-NavBar-and-MainPage">
-            <NavBar/>
+            <NavBar curUser={this.props.curUser}/>
           </div>
         </div>
       );

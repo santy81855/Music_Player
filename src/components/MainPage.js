@@ -15,6 +15,7 @@ class MainPage extends React.Component {
   // }  
   
   render() {
+    console.log(this.props.curUser);
     return (
       <div className="MainPage">
         {pages[this.props.selected]}
