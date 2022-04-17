@@ -4,28 +4,20 @@ import NavBar from './NavBar.js';
 import Login from './Login.js';
 import {useAuth0} from '@auth0/auth0-react';
 import userData from '../databases/users.json';
+import db from '../firebase';
 class StatusBar extends React.Component {
   
   // Renders either the login screen or the main app
   isLoggedIn = false;
 
   render() {
-      /*var mysql = require('mysql');
-      var connection = mysql.createConnection({
-        host: "sql5.freesqldatabase.com",
-        user:"sql5486088",
-        password:"Xx7aa9yD11",
-        database: "sql5486088",
-        port: 3306
-      });
+      /*db.collection('users').add({
+        id: this.props.curUser.given_name,
+      })*/
+      const usersref = db.collection('users')
 
-      connection.connect();
-      connection.query('SELECT * FROM USERS', function(err,rows,fields){
-        if(err) throw err
+      const queryref = usersref.where('id','==',this.props.curUser.given_name).get().then(res => {console.log(res)});
 
-        console.log(rows[0].solution)
-      })
-      connection.end()*/
       return (
         <div>
           <div className="StatusBar">
@@ -37,37 +29,6 @@ class StatusBar extends React.Component {
           </div>
         </div>
       );
-    /*if (this.isLoggedIn)
-    {
-      console.log('logged in');
-      return (
-        <div>
-          <div className="StatusBar">
-            {/*StatusBar}
-            StatusBar
-          </div>
-  
-          <div className = "App-NavBar-and-MainPage">
-            <NavBar/>
-          </div>
-        </div>
-      );
-    }
-    else
-    {
-      return (
-        <div>
-          <div className="StatusBar">
-            {/* StatusBar }
-            StatusBar
-          </div>
-  
-          <div className = "App-NavBar-and-MainPage">
-            <Login/>
-          </div>
-        </div>
-      );
-    }*/
   }
 }
 
