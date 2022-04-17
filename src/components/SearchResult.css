@@ -1,0 +1,81 @@
+.SearchResult {
+  width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
+  height: var(--aud-Search-height);
+  background-color: var(--aud-error);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: start;
+  justify-content: start;
+  text-align: left;
+}
+
+/* ========================= Left ========================= */
+.LeftBox {
+  width: var(--aud-Search-left-width);
+  height: var(--aud-Search-height);
+  background-color: var(--aud-error);
+}
+
+/* ========================= Center ========================= */
+.CenterBox {
+  /* MATH: (width + offset) - (Left/Right) */
+  width: calc(var(--aud-Search-width) - var(--aud-Search-left-width)  - var(--aud-Search-right-width) + var(--aud-Search-offset));
+  height: var(--aud-Search-height);
+  background-color: var(--aud-background);
+
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  justify-content: start;
+  text-align: left;
+}
+
+.Title {
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.Artist {
+  padding: 0px 35px;
+  text-align: left;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* ========================= Right ========================= */
+.RightBox {
+  width: var(--aud-Search-right-width);
+  height: var(--aud-Search-height);
+  background-color: var(--aud-background);
+
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  justify-content: start;
+  text-align: left;
+
+  border-left: solid var(--aud-focus);
+  border-width: 5px;
+}
+
+.Genre {
+  padding: 15px 25px;
+  text-align: left;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.Year {
+  padding: 0px 25px;
+  text-align: left;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}

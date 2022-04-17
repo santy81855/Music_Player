@@ -1,6 +1,6 @@
 .NavBar {
-  width: var(--aud-navBar-width);
-  height: calc(100vh - 27px);
+  width: var(--aud-NavBar-width);
+  height: calc(100vh - var(--aud-StatusBar-height));
   background-color: var(--aud-background);
 
   display: flex;
@@ -11,8 +11,8 @@
 }
 
 .button {
-  width: var(--aud-navBar-width);
-  height: calc(var(--aud-navBar-width) - 10px);
+  width: var(--aud-NavBar-width);
+  height: calc(var(--aud-NavBar-width) - 10px);
   background-color: var(--aud-background);
 
   display: flex;
