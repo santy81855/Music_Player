@@ -2,36 +2,42 @@ import React, { useState } from 'react';
 // import {useState} from 'react';
 import './SearchSong.css';
 import SongData from '../databases/songs/songs.json';
-import SearchResult from '../components/SearchResult.js'
+import SearchResult from '../components/SearchResult.js';
 
 
-function SearchSong(){
+
+function SearchSong() {
   const [searchTerm, setSearchTerm] = useState("")
- 
+  
+  // const [state, setstate] = useState({song:""})
+  let song;
+
   return(
     <div className="SearchSong">
-      <div className="ScrollView" >
-        <input className="SearchBox" type="text" placeholder="Search By Song Title" onChange={e=>setSearchTerm(e.target.value)} />
-        {SongData.filter((song) => {
+      <div className="ScrollView">
+        <input className="SearchBox" type="text" placeholder="Search By Song Title" onChange={(e) => setSearchTerm(e.target.value)} />
+        {SongData.filter(song = () => {
             if(searchTerm === "") {
               return song
             }
             else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())){
               return song;
             }
-          } ).map((song) => {
+          }).map((song) => {
             return(
-              <div className="ResultWrapper">
-                <div className="Divider"/>
-                <SearchResult Song={song}/>
-                {/* <div className="SearchResult">
-                  Title: {song.title}, 
-                  By: {song.artist}, 
-                  Genre: {song.genre},
-                  Release year: {song.release_year},
-                  Picture: <img src={song.cover_art} width="50%" height="50%" />
-                </div> */}
-              </div>
+              <React.Fragment key={song.id}>
+                <div className="ResultWrapper">
+                  <div className="Divider"/>
+                  <SearchResult Song={song}/>
+                  {/* <div className="SearchResult">
+                    Title: {song.title}, 
+                    By: {song.artist}, 
+                    Genre: {song.genre},
+                    Release year: {song.release_year},
+                    Picture: <img src={song.cover_art} width="50%" height="50%" />
+                  </div> */}
+                </div>
+              </React.Fragment>
             )
           })
         }

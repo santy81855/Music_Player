@@ -4,27 +4,27 @@ import React from 'react';
 class SearchResult extends React.Component {
   render() {
     return (
-      <div className = "SearchResult">
+      <div className = "SearchResult" onClick={() => console.log("Clicked:", this.props.Song.title)} style = {{cursor: 'pointer'}}>
         <div className = "LeftBox">
           <img src={this.props.Song.cover_art} alt="png" width="100%" height="100%" />
         </div>
         
         <div className = "CenterBox">
-          <text className="Title">
+          <div className="Title">
             "{this.props.Song.title}" 
-          </text>
-          <text className="Artist">
+          </div>
+          <div className="Artist">
             By: {this.props.Song.artist}
-          </text>
+          </div>
         </div>
         
         <div className = "RightBox">
-          <text className="Genre">
+          <div className="Genre">
             Genre: {this.props.Song.genre}
-          </text>
-          <text className="Year">
+          </div>
+          <div className="Year">
             Release year: {this.props.Song.release_year}
-          </text>
+          </div>
         </div>
       </div>
     );

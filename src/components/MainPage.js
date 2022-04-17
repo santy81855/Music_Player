@@ -24,7 +24,7 @@ class MainPage extends React.Component {
           {pages[this.props.selected]}
         </div>
 
-        <PlayBar playlist={Playlists[0]} />
+        <PlayBar playlist={Playlists[0]} props={this.props}/>
       </div>
     );
   }
