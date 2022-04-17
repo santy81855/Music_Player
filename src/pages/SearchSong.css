@@ -46,7 +46,7 @@
 .Divider {
   width: calc(var(--aud-Search-width) + var(--aud-Search-divider));
   height: 0px;
-  background-color: var(--aud-error);
+  background-color: var(--aud-focus);
   margin: 8px 0px;
 
   border: solid var(--aud-focus);
