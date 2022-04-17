@@ -46,31 +46,31 @@ class NavBar extends React.Component {
   toSettings() {
     this.setState(state => ({ page: 0 }));
     idx = 0;
-    console.log(idx);
+    //console.log(idx);
   }
 
   toLibrary() {
     this.setState(state => ({ page: 1 }));
     idx = 1;
-    console.log(idx);
+    //console.log(idx);
   }
 
   toSearchSong() {
     this.setState(state => ({ page: 2 }));
     idx = 2;
-    console.log(idx);
+    //console.log(idx);
   }
 
   toSearchPlaylist() {
     this.setState(state => ({ page: 3 }));
     idx = 3;
-    console.log(idx);
+    //console.log(idx);
   }
 
   toSearchArtist() {
     this.setState(state => ({ page: 4 }));
     idx = 4;
-    console.log(idx);
+    //console.log(idx);
   }
   render() {
     return (
@@ -100,8 +100,8 @@ class NavBar extends React.Component {
 
         {/* Nested App */}
         <div className = "App-MainPage-and-PlayBar">
-          <MainPage selected={this.state.page}/>
-          <PlayBar playlist={Playlists[0]} />
+          <MainPage selected={this.state.page} curUser={this.props.curUser}/>
+          <PlayBar playlist={Playlists[0]} curUser={this.props.curUser}/>
         </div>
         
       </div>
