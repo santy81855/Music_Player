@@ -1,5 +1,5 @@
 import './MainPage.css';
-import React, {createContext} from 'react';
+import React from 'react';
 import Library from '../pages/Library.js';
 import Settings from '../pages/Settings.js';
 import SearchSong from '../pages/SearchSong.js';
@@ -8,16 +8,8 @@ import SearchArtist from '../pages/SearchArtist.js';
 import PlayBar from './PlayBar';
 import Playlists from '../databases/songs/playlists.json';
 
-// const MyContext = createContext("");
-
-// const pagesTest = [Settings, Library, SearchSong, SearchPlaylist, SearchArtist ];
 
 class MainPage extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.index = 1;
-  // }
-  
   state = {
     Song: null,
   }
