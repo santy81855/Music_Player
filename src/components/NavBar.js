@@ -23,7 +23,7 @@ import artistSelectPNG from '../icons/artist_selected.png';
 // DEPRECATED: ManPage now updates through props from 'this.state.page'
 // This works! but does not update
 // put in other file: "const {idx} = require('./NavBar.js');"
-export var idx = 1;
+// export var idx = 1;
 
 
 class NavBar extends React.Component {
@@ -44,32 +44,32 @@ class NavBar extends React.Component {
   // Remove the 'idx' and let the onClick() method handle the setState()
   toSettings() {
     this.setState(state => ({ page: 0 }));
-    idx = 0;
-    console.log(idx);
+    // idx = 0;
+    // console.log(idx);
   }
 
   toLibrary() {
     this.setState(state => ({ page: 1 }));
-    idx = 1;
-    console.log(idx);
+    // idx = 1;
+    // console.log(idx);
   }
 
   toSearchSong() {
     this.setState(state => ({ page: 2 }));
-    idx = 2;
-    console.log(idx);
+    // idx = 2;
+    // console.log(idx);
   }
 
   toSearchPlaylist() {
     this.setState(state => ({ page: 3 }));
-    idx = 3;
-    console.log(idx);
+    // idx = 3;
+    // console.log(idx);
   }
 
   toSearchArtist() {
     this.setState(state => ({ page: 4 }));
-    idx = 4;
-    console.log(idx);
+    // idx = 4;
+    // console.log(idx);
   }
   render() {
     return (
@@ -98,7 +98,7 @@ class NavBar extends React.Component {
         </div>
 
         {/* Nested App */}
-        <MainPage selected={this.state.page} />
+        <MainPage selected={this.state.page} props={this.props} />
         {/* <div className = "App-MainPage-and-PlayBar"> */}
           {/* <MainPage selected={this.state.page} /> */}
           {/* <PlayBar playlist={Playlists[0]} /> */}

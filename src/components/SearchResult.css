@@ -1,5 +1,5 @@
 .SearchResult {
-  width: calc(var(--aud-Search-width) + 50px);
+  width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
   height: var(--aud-Search-height);
   background-color: var(--aud-error);
 
@@ -9,20 +9,19 @@
   align-content: start;
   justify-content: start;
   text-align: left;
-
 }
 
 /* ========================= Left ========================= */
 .LeftBox {
-  width: 100px;
-  height: var(--aud-Search-offset);
+  width: var(--aud-Search-left-width);
+  height: var(--aud-Search-height);
   background-color: var(--aud-error);
 }
 
 /* ========================= Center ========================= */
 .CenterBox {
-  /* MATH: (width + offset) - (Left/Right width + padding) */
-  width: calc(var(--aud-Search-width) + 50px - 400px);
+  /* MATH: (width + offset) - (Left/Right) */
+  width: calc(var(--aud-Search-width) - var(--aud-Search-left-width)  - var(--aud-Search-right-width) + var(--aud-Search-offset));
   height: var(--aud-Search-height);
   background-color: var(--aud-background);
 
@@ -51,8 +50,8 @@
 
 /* ========================= Right ========================= */
 .RightBox {
-  width: 300px;
-  height: var(--aud-Search-offset);
+  width: var(--aud-Search-right-width);
+  height: var(--aud-Search-height);
   background-color: var(--aud-background);
 
   display: flex;

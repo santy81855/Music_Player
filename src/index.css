@@ -10,10 +10,13 @@
   --aud-StatusBar-height: 27px;
   --aud-NavBar-width: 100px;
   --aud-PlayBar-height: 120px;
+
   --aud-Search-width: 1050px;
   --aud-Search-divider: 100px;
-  --aud-Search-offset: 100px;
+  --aud-Search-offset: 50px;
   --aud-Search-height: 100px;
+  --aud-Search-left-width: 100px;
+  --aud-Search-right-width: 300px;
 }
 
 body {
