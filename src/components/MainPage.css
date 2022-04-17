@@ -1,11 +1,17 @@
 .MainPage {
-  width: calc(100vw - 100px);
-  height: calc(100vh - 120px - 27px);
+  width: calc(100vw - var(--aud-NavBar-width));
+  height: calc(100vh - var(--aud-PlayBar-height) - var(--aud-StatusBar-height));
   background-color: var(--aud-error);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   text-align: center;
+}
+
+.App-MainPage-and-PlayBar {
+  background-color: var(--aud-error);
+  display: flex;
+  flex-direction: column;
 }
