@@ -2,9 +2,8 @@ import './NavBar.css';
 import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
 import MainPage from './MainPage';
-import PlayBar from './PlayBar';
-import Playlists from '../databases/songs/playlists.json';
-import {useAuth0} from '@auth0/auth0-react';
+// import PlayBar from './PlayBar';
+// import Playlists from '../databases/songs/playlists.json';
 
 import settingsPNG from '../icons/settings.png';
 import settingsSelectPNG from '../icons/settings_selected.png';
@@ -31,7 +30,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 1,
+      page: 2,
     };
 
     this.toSettings = this.toSettings.bind(this);
@@ -99,10 +98,11 @@ class NavBar extends React.Component {
         </div>
 
         {/* Nested App */}
-        <div className = "App-MainPage-and-PlayBar">
-          <MainPage selected={this.state.page}/>
-          <PlayBar playlist={Playlists[0]} />
-        </div>
+        <MainPage selected={this.state.page} />
+        {/* <div className = "App-MainPage-and-PlayBar"> */}
+          {/* <MainPage selected={this.state.page} /> */}
+          {/* <PlayBar playlist={Playlists[0]} /> */}
+        {/* </div> */}
         
       </div>
     );
