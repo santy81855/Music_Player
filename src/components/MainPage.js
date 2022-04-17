@@ -15,10 +15,7 @@ class MainPage extends React.Component {
   // }  
   
   render() {
-    console.log(userData);
-      console.log("appending");
-      userData.push(this.props.curUser);
-      console.log(userData);
+    console.log(userData)
     return (
       <div className="MainPage">
         {pages[this.props.selected]}
