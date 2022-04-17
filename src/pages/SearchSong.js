@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-// import {useState} from 'react';
 import './SearchSong.css';
 import SongData from '../databases/songs/songs.json';
 import SearchResult from '../components/SearchResult.js';
 
 
-
 function SearchSong() {
   const [searchTerm, setSearchTerm] = useState("")
-  
-  // const [state, setstate] = useState({song:""})
   let song;
 
   return(
@@ -20,7 +16,7 @@ function SearchSong() {
             if(searchTerm === "") {
               return song
             }
-            else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())){
+            else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())) {
               return song;
             }
           }).map((song) => {
@@ -29,13 +25,6 @@ function SearchSong() {
                 <div className="ResultWrapper">
                   <div className="Divider"/>
                   <SearchResult Song={song}/>
-                  {/* <div className="SearchResult">
-                    Title: {song.title}, 
-                    By: {song.artist}, 
-                    Genre: {song.genre},
-                    Release year: {song.release_year},
-                    Picture: <img src={song.cover_art} width="50%" height="50%" />
-                  </div> */}
                 </div>
               </React.Fragment>
             )
