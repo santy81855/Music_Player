@@ -11,13 +11,19 @@ class StatusBar extends React.Component {
   isLoggedIn = false;
 
   render() {
-      /*db.collection('users').add({
-        id: this.props.curUser.given_name,
-      })*/
+      // db.collection('users').add({
+      //   id: "test",
+      // })
       const usersref = db.collection('users')
 
-      const queryref = usersref.where('id','==',this.props.curUser.given_name).get().then(res => {console.log(res)});
+      const queryref = usersref.where('id','==',"test").get().then(res => {console.log(res)});
 
+      var relevantusers = db.collection('users').where('id', '==', "test");
+      relevantusers.get().then(function (querySnapshot) {
+        if(!querySnapshot.empty){
+          console.log("found something");
+        }
+      });
       return (
         <div>
           <div className="StatusBar">
