@@ -2,6 +2,7 @@ import './Login.css';
 import React, { useEffect } from 'react';
 import {useAuth0} from '@auth0/auth0-react';
 import StatusBar from './StatusBar';
+
 function Login(props){
     const {
       loginWithPopup, 
@@ -10,10 +11,11 @@ function Login(props){
       user, 
       isAuthenticated
     } = useAuth0();
-
+    
     return (isAuthenticated === true) ?
       <div className = "App-NavBar-and-MainPage">
-        <StatusBar curUser = {user}/>
+        
+        <StatusBar curUser ={user}/>
       </div>
     :
       <div>
