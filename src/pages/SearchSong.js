@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {useState} from 'react';
 import './SearchSong.css';
 import SongData from '../databases/songs/songs.json';
+import SearchResult from '../components/SearchResult.js'
+
 
 function SearchSong(){
   const [searchTerm,setSearchTerm] = useState('')
@@ -10,26 +12,32 @@ function SearchSong(){
   // }
   return(
     <div className="SearchSong">
-      <input className="SearchBox" type="text" placeholder="Search By Song Title" onChange={e=>setSearchTerm(e.target.value)} />
-      {SongData.filter((song) => {
-          if(searchTerm == "") {
-            return song
+      <div className="ScrollView" >
+        <input className="SearchBox" type="text" placeholder="Search By Song Title" onChange={e=>setSearchTerm(e.target.value)} />
+          {SongData.filter((song) => {
+              if(searchTerm == "") {
+                return song
+              }
+              else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                return song;
+              }
+            } ).map((song) => {
+              return(
+                <div className="ResultWrapper">
+                  <div className="Divider"/>
+                  <SearchResult Song={song}/>
+                  {/* <div className="SearchResult">
+                    Title: {song.title}, 
+                    By: {song.artist}, 
+                    Genre: {song.genre},
+                    Release year: {song.release_year},
+                    Picture: <img src={song.cover_art} width="50%" height="50%" />
+                  </div> */}
+                </div>
+              )
+            })
           }
-          else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())){
-            return song;
-          }
-        } ).map((song) => {
-          return(
-            <div>
-              Title: {song.title}, 
-              By: {song.artist}, 
-              Genre: {song.genre},
-              Release year: {song.release_year},
-              Picture: <img src={song.cover_art} width="10%" height="40%" />
-            </div>
-          )
-        })
-      }
+        </div>
     </div>
   );
 }

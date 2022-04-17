@@ -1,6 +1,6 @@
 .PlayBar {
-  width: calc(100vw - 100px);
-  height: 120px;
+  width: calc(100vw - var(--aud-NavBar-width));
+  height: var(--aud-PlayBar-height);
   background-color: var(--aud-background);
 
   display: flex;
