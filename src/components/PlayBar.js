@@ -46,8 +46,8 @@ function PlayBar(props) {
       <div className="PlayBar">
         <AudioPlayer
           style={PlayBarStyle}
-          showSkipControls={true}
           showJumpControls={false}
+          showSkipControls={true}
           autoPlay={false}
           volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
@@ -63,7 +63,7 @@ function PlayBar(props) {
           onClickNext={handleClickNext}
           onEnded={handleClickNext}
           onClickForward={handleClickNext}
-          progressJumpSteps={{backward:1000000,forward:1000000}}
+          //progressJumpSteps={{backward:1000000,forward:1000000}}
         />
       </div>
     );
