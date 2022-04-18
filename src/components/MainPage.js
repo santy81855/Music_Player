@@ -22,8 +22,8 @@ class MainPage extends React.Component {
   pages = [ <Settings />,
             <Library/>,
             <SearchSong value={"Hello from Main!"} callback={this.handleCallback}/>,
-            <SearchPlaylist/>,
-            <SearchArtist/>
+            <SearchPlaylist value={"Hello from Main!"} callback={this.handleCallback}/>,
+            <SearchArtist value={"Hello from Main!"} callback={this.handleCallback}/>
           ];
   
   render() {
