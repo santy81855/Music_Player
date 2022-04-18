@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import './Library.css';
-import settingsPNG from '../icons/settings.png';
+import songPNG from '../icons/song.png';
+import playlistPNG from '../icons/playlist.png';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -58,11 +59,11 @@ class Library extends Component {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
               >
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
               </Carousel>
             </div>
           </div>
@@ -89,15 +90,15 @@ class Library extends Component {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
               >
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={settingsPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
               </Carousel>
             </div>
           </div>
