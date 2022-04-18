@@ -14,7 +14,6 @@ function Login(props){
     
     return (isAuthenticated === true) ?
       <div className = "App-NavBar-and-MainPage">
-        
         <StatusBar curUser ={user}/>
       </div>
     :
