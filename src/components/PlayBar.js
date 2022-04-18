@@ -7,20 +7,6 @@ import SongData from '../databases/songs/songs.json';
 import PlayBarStyle from './PlayBarStyle.scss';
 import {useState} from "react";
 function PlayBar(props){
-// class PlayBar extends React.Component {
-//   constructor(props){
-//     super(props);
-//   }
-  //render() {
-    /*// testing
-    var target = "Ukelele";
-    var songs = SongData.filter(function(song){
-      return song.title == target
-    })
-    // songs is an array of search results
-    var song = songs[0]
-    // song is current song as it was top result
-    console.log(song)*/
     const [trackIndex, setTrackIndex] = useState(0);
     const handleClickPrevious = () => {
       setTrackIndex((currentTrack) =>
