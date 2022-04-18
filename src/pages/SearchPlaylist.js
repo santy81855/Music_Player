@@ -4,11 +4,11 @@ import SongData from '../databases/songs/songs.json';
 import SearchResult from '../components/SearchResult.js';
 
 
-function SearchSong(props) {
+function SearchPlaylist(props) {
   const [searchTerm, setSearchTerm] = useState("")
 
   return(
-      <div className="SearchSong">
+      <div className="SearchPlaylist">
         <div className="ScrollView">
           <input className="SearchBox" type="text" placeholder="Search By Song Album" onChange={(e) => setSearchTerm(e.target.value)} />
           {SongData.filter(
