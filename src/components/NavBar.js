@@ -73,7 +73,8 @@ class NavBar extends React.Component {
     //console.log(idx);
   }
   render() {
-    console.log("in navbar",this.props.curUser)
+    console.log("in navbar",this.props.curUser);
+    
     return (
       <div className='fullContainer'>
         {/* NavBar */}
