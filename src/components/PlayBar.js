@@ -31,8 +31,8 @@ function PlayBar(props) {
           volume={0.5}
           src={props.song.mp3address}
           header={`Now Playing: "${props.song.title}" by ${props.song.artist}`}
-          onPlay={() => console.log("onPlay:", props.song.title)}
-          onPause={() =>console.log("onPause:", props.song.mp3address)}
+          // onPlay={() => console.log("onPlay:", props.song.title)}
+          // onPause={() => console.log("onPause:", props.song.mp3address)}
           onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
           onEnded={handleClickNext}
@@ -46,15 +46,24 @@ function PlayBar(props) {
       <div className="PlayBar">
         <AudioPlayer
           style={PlayBarStyle}
+          showJumpControls={true}
+          showSkipControls={true}
           autoPlay={false}
           volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
           header={`Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}" by ${SongData[props.playlist.songs[trackIndex]].artist}`}
-          onPlay={() => console.log("onPlay:", SongData[props.playlist.songs[trackIndex]].title)}
-          onPause={() =>console.log("onPause:", SongData[props.playlist.songs[trackIndex]].mp3address)}
+
+          //onPlay={e => console.log("onPlay")}
+          //onPause={e=>console.log("pause")}
+
+          // onPlay={() => console.log("onPlay:", SongData[props.playlist.songs[trackIndex]].title)}
+          // onPause={() => console.log("onPause:", SongData[props.playlist.songs[trackIndex]].mp3address)}
+
           onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
           onEnded={handleClickNext}
+          onClickForward={handleClickNext}
+          //progressJumpSteps={{backward:1000000,forward:1000000}}
         />
       </div>
     );

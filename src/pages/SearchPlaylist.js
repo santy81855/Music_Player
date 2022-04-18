@@ -10,7 +10,13 @@ function SearchPlaylist(props) {
   return(
       <div className="SearchPlaylist">
         <div className="ScrollView">
-          <input className="SearchBox" type="text" placeholder="Search By Song Album" onChange={(e) => setSearchTerm(e.target.value)} />
+          <input
+            autoFocus
+            className="SearchBox"
+            type="text"
+            placeholder="Search for Song by Album"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           {SongData.filter(
             (song) => {
               if(searchTerm === "") {

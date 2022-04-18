@@ -9,3 +9,58 @@
   justify-content: center;
   text-align: center;
 }
+
+.LibraryWrapper {
+  width: calc(var(--aud-Library-width));
+  height: var(--aud-Library-height);
+  background-color: var(--aud-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.LibraryDivider {
+  width: calc(var(--aud-Library-width));
+  height: 0px;
+  background-color: var(--aud-focus);
+  margin: 8px 0px;
+
+  border: solid var(--aud-focus);
+  border-width: 2px;
+}
+
+.LibraryGallery {
+  width: calc(var(--aud-Library-width));
+  height: calc((var(--aud-Library-height) - 60px) / 2);
+  /* min-width: calc(var(--aud-Library-width)); */
+  /* min-height: calc((var(--aud-Library-height) - 60px) / 2); */
+  background-color: var(--aud-error);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.LibraryGalleryButton {
+  width: calc(var(--aud-Library-offset) / 2);
+  height: calc((var(--aud-Library-height) - 60px) / 2);
+  background-color: var(--aud-focus);
+}
+
+.LibraryGalleryCenter {
+  /* width: calc(var(--aud-Library-width) - var(--aud-Library-offset)); */
+  width: calc(var(--aud-Library-width));
+  height: calc((var(--aud-Library-height) - 60px) / 2);
+  background-color: var(--aud-primary);
+
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  text-align: center;
+}

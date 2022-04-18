@@ -2,8 +2,9 @@ import './NavBar.css';
 import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
 import MainPage from './MainPage';
-// import PlayBar from './PlayBar';
-// import Playlists from '../databases/songs/playlists.json';
+import PlayBar from './PlayBar';
+import Playlists from '../databases/songs/playlists.json';
+import {useAuth0} from '@auth0/auth0-react';
 
 import settingsPNG from '../icons/settings.png';
 import settingsSelectPNG from '../icons/settings_selected.png';
@@ -44,8 +45,10 @@ class NavBar extends React.Component {
   // Remove the 'idx' and let the onClick() method handle the setState()
   toSettings() {
     this.setState(state => ({ page: 0 }));
+
     // idx = 0;
     // console.log(idx);
+
   }
 
   toLibrary() {
@@ -56,22 +59,29 @@ class NavBar extends React.Component {
 
   toSearchSong() {
     this.setState(state => ({ page: 2 }));
+
     // idx = 2;
     // console.log(idx);
+
   }
 
   toSearchPlaylist() {
     this.setState(state => ({ page: 3 }));
     // idx = 3;
     // console.log(idx);
+
   }
 
   toSearchArtist() {
     this.setState(state => ({ page: 4 }));
+
     // idx = 4;
     // console.log(idx);
+
   }
   render() {
+    console.log("in navbar",this.props.curUser);
+    
     return (
       <div className='fullContainer'>
         {/* NavBar */}
@@ -98,6 +108,7 @@ class NavBar extends React.Component {
         </div>
 
         {/* Nested App */}
+
         <MainPage selected={this.state.page} props={this.props} />
         {/* <div className = "App-MainPage-and-PlayBar"> */}
           {/* <MainPage selected={this.state.page} /> */}
