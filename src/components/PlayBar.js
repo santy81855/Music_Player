@@ -46,7 +46,7 @@ function PlayBar(props) {
       <div className="PlayBar">
         <AudioPlayer
           style={PlayBarStyle}
-          showJumpControls={false}
+          showJumpControls={true}
           showSkipControls={true}
           autoPlay={false}
           volume={0.5}
