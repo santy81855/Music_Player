@@ -1,11 +1,13 @@
-import React, { Component, useRef, useEffect} from 'react';
+import React, { Component} from 'react';
 import './Library.css';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 import settingsPNG from '../icons/settings.png';
 
-import Playlists from '../databases/songs/playlists.json';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+// import Playlists from '../databases/songs/playlists.json';
 // playlist={Playlists[0]}
+
 
 const responsive = {
   superLargeDesktop: {
@@ -17,14 +19,14 @@ const responsive = {
     breakpoint: { max: 3000, min: 1024 },
     items: 3
   },
-  // tablet: {
-  //   breakpoint: { max: 1024, min: 464 },
-  //   items: 2
-  // },
-  // mobile: {
-  //   breakpoint: { max: 464, min: 0 },
-  //   items: 1
-  // }
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
 };
 
 class Library extends Component {
@@ -68,7 +70,7 @@ class Library extends Component {
           <div className="LibraryDivider"/>
 
           <div className="LibraryGallery">
-          <div className="LibraryGalleryCenter">
+            <div className="LibraryGalleryCenter">
               {/* PlayLists */}
               <Carousel
                 swipeable={false}
