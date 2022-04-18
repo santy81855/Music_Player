@@ -38,4 +38,4 @@ function SearchSong(props) {
     </div>
   );
 }
-export default SearchSong;
+export default SearchArtist;
