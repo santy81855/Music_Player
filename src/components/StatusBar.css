@@ -1,6 +1,6 @@
 .StatusBar {
   width: 100vw;
-  height: 27px;
+  height: var(--aud-StatusBar-height);
   background-color: var(--aud-secondary);
 
   display: flex;

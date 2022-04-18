@@ -6,8 +6,8 @@
 
   /* NOTE: These are arbitrary, just trying to prevent the app from becoming to small in-browser. */
   /* Would be nice if we can find a way to prevent the screen from resizing, and keep an aspect ratio. */
-  min-width: 1000px;
-  min-height: 600px;
+  min-width: var(--aud-minWidth);
+  min-height: var(--aud-minHeight);
 }
 
 .App-NavBar-and-MainPage {

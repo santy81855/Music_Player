@@ -1,6 +1,7 @@
 import './StatusBar.css';
 import React, { useEffect , useState} from 'react';
 import NavBar from './NavBar.js';
+
 import Login from './Login.js';
 import {useAuth0} from '@auth0/auth0-react';
 import userData from '../databases/users.json';
@@ -15,7 +16,6 @@ class user{
     this.playlists = playlists;
   }
 }
-
 class StatusBar extends React.Component {
   constructor(props){
     super(props)
