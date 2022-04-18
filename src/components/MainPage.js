@@ -16,14 +16,13 @@ class MainPage extends React.Component {
   
   handleCallback = (childSongData) => {
     this.setState({Song: childSongData})
-    console.log("In Main:", childSongData.title)
   }
   
   pages = [ <Settings />,
             <Library/>,
-            <SearchSong value={"Hello from Main!"} callback={this.handleCallback}/>,
-            <SearchPlaylist/>,
-            <SearchArtist/>
+            <SearchSong callback={this.handleCallback}/>,
+            <SearchPlaylist callback={this.handleCallback}/>,
+            <SearchArtist callback={this.handleCallback}/>
           ];
   
   render() {

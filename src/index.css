@@ -7,6 +7,9 @@
   --aud-primary: #303238;
   --aud-background: #24282b;
 
+  --aud-minHeight: 600px;
+  --aud-minWidth: 1000px;
+  
   --aud-StatusBar-height: 27px;
   --aud-NavBar-width: 100px;
   --aud-PlayBar-height: 120px;
@@ -17,6 +20,10 @@
   --aud-Search-height: 100px;
   --aud-Search-left-width: 100px;
   --aud-Search-right-width: 300px;
+
+  --aud-Library-width: calc(100vw - var(--aud-NavBar-width) - 100px);
+  --aud-Library-offset: 100px;
+  --aud-Library-height: calc(100vh - var(--aud-StatusBar-height) - var(--aud-PlayBar-height) - 25px);
 }
 
 body {
