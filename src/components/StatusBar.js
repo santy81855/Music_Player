@@ -44,6 +44,7 @@ class StatusBar extends React.Component {
       playlists: user.playlists
     }).then(console.log('updated', user.firstname))
   }
+  
   componentDidMount(){
     console.log("lmao: ", this.props.curUser)
     window.user = this.props.curUser
@@ -64,7 +65,7 @@ class StatusBar extends React.Component {
         db.collection('users').add({
           id: this.props.curUser.sub,
           firstname: this.props.curUser.given_name,
-          lastname: this.props.curUser.family_name,,
+          lastname: this.props.curUser.family_name,
           latitude: this.props.userLatitude,
           longitude: this.props.userLongitude,
           playlists: []
@@ -73,7 +74,7 @@ class StatusBar extends React.Component {
         db.collection('users').add({
           id: this.props.curUser.sub,
           firstname: this.props.curUser.nickname,
-          lastname: this.props.curUser.nickname,,
+          lastname: this.props.curUser.nickname,
           latitude: this.props.userLatitude,
           longitude: this.props.userLongitude,
           playlists: []
