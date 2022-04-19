@@ -1,0 +1,27 @@
+.LibraryItem {
+  width:300;
+  height: 300; 
+  background-color: var(--aud-secondary);
+
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.Cover {
+  background-color: var(--aud-error);
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.TagBar {
+  height: 300px;
+  width: 300px;
+
+  background-color: var(--aud-background);
+}

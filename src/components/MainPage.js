@@ -18,11 +18,11 @@ class MainPage extends React.Component {
     this.setState({Song: childSongData})
   }
   
-  pages = [ <Settings />,
-            <Library/>,
-            <SearchSong callback={this.handleCallback}/>,
-            <SearchPlaylist callback={this.handleCallback}/>,
-            <SearchArtist callback={this.handleCallback}/>
+  pages = [ <Settings user={this.props.user} />,
+            <Library user={this.props.user} />,
+            <SearchSong user={this.props.user} callback={this.handleCallback}/>,
+            <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
+            <SearchArtist user={this.props.user} callback={this.handleCallback}/>
           ];
   
   render() {
@@ -33,7 +33,7 @@ class MainPage extends React.Component {
           {this.pages[this.props.selected]}
         </div>
 
-        <PlayBar song={this.state.Song} playlist={Playlists[0]} props={this.props}/>
+        <PlayBar user={this.props.user} song={this.state.Song} playlist={Playlists[0]} props={this.props}/>
       </div>
     );
   }

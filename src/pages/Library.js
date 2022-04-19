@@ -2,12 +2,14 @@ import React, { Component} from 'react';
 import './Library.css';
 import songPNG from '../icons/song.png';
 import playlistPNG from '../icons/playlist.png';
+import LibraryItem from '../components/LibraryItem.js'
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 // import Playlists from '../databases/songs/playlists.json';
 // playlist={Playlists[0]}
+
 
 
 const responsive = {
@@ -59,11 +61,19 @@ class Library extends Component {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
               >
-                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
+                <img
+                  src={songPNG}
+                  alt="icon"
+                  className="PNG"
+                  style={{width:300, height: 300, background: "gold"}}
+                  onClick={() => console.log(this.props)}
+                />
+
+                <LibraryItem/>
+                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
+                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
+                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
+                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
               </Carousel>
             </div>
           </div>
