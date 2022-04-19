@@ -1,0 +1,56 @@
+.LibraryItem {
+  width: 300px;
+  height: 300px; 
+  background-color: var(--aud-secondary);
+  /* background-image: url('../icons/song.png'); */
+
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.LibraryItemTitle {
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.LibraryItemArtist {
+  padding: 0px 35px;
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.TagBar {
+  height: 300px;
+  width: 300px;
+  background-color: var(--aud-background);
+  opacity: 0.00;
+}
+
+.TagBar:hover {
+  height: 300px;
+  width: 300px;
+  background-color: var(--aud-background);
+  opacity: 0.75;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .Title {
+  font-size: 30px;
+}
+
+.Artist {
+  font-size: 18px;
+} */

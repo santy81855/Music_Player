@@ -13,7 +13,7 @@
 .LibraryWrapper {
   width: calc(var(--aud-Library-width));
   height: var(--aud-Library-height);
-  background-color: var(--aud-background);
+  /* background-color: var(--aud-background); */
 
   display: flex;
   flex-direction: column;
