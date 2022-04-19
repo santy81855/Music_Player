@@ -1,12 +1,7 @@
 import './StatusBar.css';
-import React, { useEffect , useState} from 'react';
+import React from 'react';
 import NavBar from './NavBar.js';
-
-import Login from './Login.js';
-import {useAuth0} from '@auth0/auth0-react';
-import userData from '../databases/users.json';
 import db from '../firebase';
-import {getFirestore, doc, getDoc } from "firebase/firestore";
 
 class user{
   constructor(fname,lname,id,playlists){
@@ -38,6 +33,14 @@ class StatusBar extends React.Component {
     }
     else{
       console.log('database adding');
+      /*
+      playlists formatting:
+      [
+        map<
+        0: {author,genre,last-song,[songindeces],title,year}
+        >
+      ]
+      */
       db.collection('users').add({
         id: window.user.sub,
         firstname: window.user.given_name,
