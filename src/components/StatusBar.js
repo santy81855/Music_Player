@@ -56,12 +56,12 @@ class StatusBar extends React.Component {
         //console.log("foreach",doc.data())
         items.push(doc.data())
       })
-      console.log("HI:", items[0]);
+      //console.log("HI:", items[0]);
       return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
     }
     else{
       console.log(this.props.curUser);
-      if(this.props.user.sub.includes("google")){
+      if(this.props.curUser.sub.contains("google")){
         db.collection('users').add({
           id: this.props.curUser.sub,
           firstname: this.props.curUser.given_name,
