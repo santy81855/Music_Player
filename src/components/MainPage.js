@@ -11,11 +11,21 @@ import Playlists from '../databases/songs/playlists.json';
 
 class MainPage extends React.Component {
   state = {
-    Song: null,
+    song: null,
+    playlist: Playlists[0],
   }
   
-  handleCallback = (childSongData) => {
-    this.setState({Song: childSongData})
+  handleCallback = (childSongData, childPlaylistData) => {
+    if (childSongData !== null) 
+    {
+      this.setState({song: childSongData})
+      this.setState({playlist: null})
+    }
+    else if (childPlaylistData !== null)
+    {
+      this.setState({song: null})
+      this.setState({playlist: childPlaylistData})
+    }
   }
   
   pages = [ <Settings user={this.props.user} />,
@@ -33,7 +43,7 @@ class MainPage extends React.Component {
           {this.pages[this.props.selected]}
         </div>
 
-        <PlayBar user={this.props.user} song={this.state.Song} playlist={Playlists[0]} props={this.props}/>
+        <PlayBar user={this.props.user} song={this.state.song} playlist={this.state.playlist} props={this.props}/>
       </div>
     );
   }

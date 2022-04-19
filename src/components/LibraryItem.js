@@ -10,12 +10,11 @@ class LibraryItem extends React.Component {
   }
   
   loadSong = () => {
-    this.props.callback(this.props.song);
+    this.props.callback(this.props.song, null);
   };
 
   loadPlaylist = () => {
-    console.log(SongData[this.props.playlist.songs[0]]);
-    this.props.callback(SongData[this.props.playlist.songs[0]]);
+    this.props.callback(null, this.props.playlist);
   };
   
   render() {

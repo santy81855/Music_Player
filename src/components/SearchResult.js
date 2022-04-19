@@ -9,7 +9,7 @@ class SearchResult extends React.Component {
   }
   
   onTrigger = () => {
-    this.props.callback(this.props.song);
+    this.props.callback(this.props.song, null);
   };
   
   render() {

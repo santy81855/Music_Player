@@ -46,8 +46,9 @@ function PlayBar(props) {
       <div className="PlayBar">
         <AudioPlayer
           style={PlayBarStyle}
-          showJumpControls={true}
+          showJumpControls={false}
           showSkipControls={true}
+          showDownloadProgress={false}
           autoPlay={false}
           volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
