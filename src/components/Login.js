@@ -11,10 +11,19 @@ function Login(props){
       user, 
       isAuthenticated
     } = useAuth0();
+
+    const [latitude, setLatitude] = React.useState('')
+    const [longitude, setLongitude] = React.useState('')
+    React.useEffect(() => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLatitude(position.coords.latitude)
+        setLongitude(position.coords.longitude)
+      })
+    }, [])
     
     return (isAuthenticated === true) ?
       <div className = "App-NavBar-and-MainPage">
-        <StatusBar curUser ={user}/>
+        <StatusBar curUser ={user} userLatitude={latitude} userLongitude = {longitude} />
       </div>
     :
       <div>

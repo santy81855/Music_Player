@@ -23,7 +23,10 @@ class LibraryItem extends React.Component {
       return (
         <div
           className="LibraryItem" 
-          style={{ backgroundImage: `url(${this.props.song.cover_art})` }}
+          style={{
+            backgroundImage: `url(${this.props.song.cover_art})`,
+            backgroundSize: '100% 100%',
+          }}
           onClick={this.loadSong}
         >
           <div className="TagBar">
@@ -39,7 +42,10 @@ class LibraryItem extends React.Component {
       return (
         <div
           className="LibraryItem" 
-          style={{ backgroundImage: `url(${SongData[this.props.playlist.songs[0]].cover_art})` }}
+          style={{
+            backgroundImage: `url(${SongData[this.props.playlist.songs[0]].cover_art})`,
+            backgroundSize: '100% 100%',
+          }}
           onClick={this.loadPlaylist}
         >
           <div className="TagBar">
