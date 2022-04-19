@@ -34,14 +34,15 @@ class StatusBar extends React.Component {
         //console.log("foreach",doc.data())
         items.push(doc.data())
       })
-      return new user(items[0].firstname,items[0].lastname,items[0].id,items[0].playlists)
+      console.log("HI:", items[0].firstname);
+      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
     }
     else{
-      console.log('database adding');
+      console.log( this.props.curUser);
       db.collection('users').add({
-        id: window.user.sub,
-        firstname: window.user.given_name,
-        lastname: window.user.family_name,
+        id: this.props.curUser.sub,
+        firstname: this.props.curUser.nickname,
+        lastname: this.props.curUser.nickname,
         playlists: []
       })
     }
@@ -62,7 +63,7 @@ class StatusBar extends React.Component {
             StatusBar
           </div>
           <div className = "App-NavBar-and-MainPage">
-            <NavBar curUser={this.state.currentuser}/>
+            <NavBar user={this.state.currentuser}/>
           </div>
         </div>
       );

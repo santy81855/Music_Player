@@ -11,18 +11,28 @@ import Playlists from '../databases/songs/playlists.json';
 
 class MainPage extends React.Component {
   state = {
-    Song: null,
+    song: null,
+    playlist: Playlists[0],
   }
   
-  handleCallback = (childSongData) => {
-    this.setState({Song: childSongData})
+  handleCallback = (childSongData, childPlaylistData) => {
+    if (childSongData !== null) 
+    {
+      this.setState({song: childSongData})
+      this.setState({playlist: null})
+    }
+    else if (childPlaylistData !== null)
+    {
+      this.setState({song: null})
+      this.setState({playlist: childPlaylistData})
+    }
   }
   
-  pages = [ <Settings />,
-            <Library/>,
-            <SearchSong callback={this.handleCallback}/>,
-            <SearchPlaylist callback={this.handleCallback}/>,
-            <SearchArtist callback={this.handleCallback}/>
+  pages = [ <Settings user={this.props.user} />,
+            <Library user={this.props.user} callback={this.handleCallback}/>,
+            <SearchSong user={this.props.user} callback={this.handleCallback}/>,
+            <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
+            <SearchArtist user={this.props.user} callback={this.handleCallback}/>
           ];
   
   render() {
@@ -33,7 +43,7 @@ class MainPage extends React.Component {
           {this.pages[this.props.selected]}
         </div>
 
-        <PlayBar song={this.state.Song} playlist={Playlists[0]} props={this.props}/>
+        <PlayBar user={this.props.user} song={this.state.song} playlist={this.state.playlist} props={this.props}/>
       </div>
     );
   }
