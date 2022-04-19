@@ -1,14 +1,13 @@
 import React, { Component} from 'react';
 import './Library.css';
-import songSelectedPNG from '../icons/song_selected.png';
-import playlistPNG from '../icons/playlist.png';
+// import songSelectedPNG from '../icons/song_selected.png';
+// import playlistPNG from '../icons/playlist.png';
 import LibraryItem from '../components/LibraryItem.js'
+import Playlists from '../databases/songs/playlists.json';
+import SongData from '../databases/songs/songs.json';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
-import Playlists from '../databases/songs/playlists.json';
-import SongData from '../databases/songs/songs.json';
 // playlist={Playlists[0]}
 
 
