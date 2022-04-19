@@ -31,7 +31,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 2,
+      page: 1,
     };
 
     this.toSettings = this.toSettings.bind(this);
@@ -109,7 +109,7 @@ class NavBar extends React.Component {
 
         {/* Nested App */}
 
-        <MainPage selected={this.state.page} props={this.props} />
+        <MainPage user={this.props.user} selected={this.state.page} props={this.props} />
         {/* <div className = "App-MainPage-and-PlayBar"> */}
           {/* <MainPage selected={this.state.page} /> */}
           {/* <PlayBar playlist={Playlists[0]} /> */}

@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import './SearchArtist.css';
-import SongData from '../databases/songs/songs.json';
+import songData from '../databases/songs/songs.json';
 import SearchResult from '../components/SearchResult.js';
 
 
@@ -14,10 +14,10 @@ function SearchArtist(props) {
             autoFocus
             className="SearchBox"
             type="text"
-            placeholder="Search for Song by Artist"
+            placeholder="Search for song by Artist"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          {SongData.filter(
+          {songData.filter(
             (song) => {
               if(searchTerm === "") {
                 return song
@@ -32,7 +32,7 @@ function SearchArtist(props) {
                 <React.Fragment key={song.id}>
                   <div className="ResultWrapper">
                     <div className="Divider"/>
-                    <SearchResult Song={song} value={props.value} callback={props.callback}/>
+                    <SearchResult song={song} value={props.value} callback={props.callback}/>
                   </div>
                 </React.Fragment>
               )

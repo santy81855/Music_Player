@@ -28,6 +28,7 @@ function PlayBar(props) {
         <AudioPlayer
           style={PlayBarStyle}
           autoPlay={false}
+          loop={true}
           volume={0.5}
           src={props.song.mp3address}
           header={`Now Playing: "${props.song.title}" by ${props.song.artist}`}
@@ -36,6 +37,7 @@ function PlayBar(props) {
           onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
           onEnded={handleClickNext}
+          onClickForward={handleClickNext}
         />
       </div>
     );
@@ -46,8 +48,9 @@ function PlayBar(props) {
       <div className="PlayBar">
         <AudioPlayer
           style={PlayBarStyle}
-          showJumpControls={true}
+          showJumpControls={false}
           showSkipControls={true}
+          showDownloadProgress={false}
           autoPlay={false}
           volume={0.5}
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
