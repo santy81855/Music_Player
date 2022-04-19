@@ -19,6 +19,34 @@ class StatusBar extends React.Component {
     }
   }
 
+  
+  // can index : playlists[index] to get object
+  // song id should be passed in since we only store index/id
+  addSongtoPlaylist(user,playlistid,song){
+    user.playlists[playlistid].push(song)
+  }
+
+  addPlaylist(user, playlistname){
+    user.playlists.push({
+      year: new Date().getFullYear(),
+      genre: "user",
+      songs: [],
+      "last-song": null,// needs to be redefined later
+      title: playlistname,
+      author: user.firstname
+    })
+  }
+  // pass in song id
+  updatePlaylistLastSong(user,playlist,song){
+    user.playlists[playlist]["last-song"] = song;
+  }
+
+  async updateUser(user){
+    db.collection("users").doc(user.id).update({
+      playlists: user.playlists
+    }).then(console.log('updated', user.firstname))
+  }
+
   componentDidMount(){
     window.user = this.props.curUser
     var relevantusers = db.collection('users').where('id', '==', window.user.sub);

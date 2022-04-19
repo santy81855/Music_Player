@@ -78,7 +78,7 @@ class NavBar extends React.Component {
   }
   render() {
     if(this.props.curUser){
-      console.log(this.props.curUser.playlists)
+      console.log(this.props.curUser)
     }else{
       console.log("empty for now")
     }
