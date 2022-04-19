@@ -98,7 +98,7 @@ class Library extends Component {
                 containerClass="LibraryGalleryCenter"
                 deviceType={this.props.deviceType}
                 dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-20-px"
+                // itemClass="carousel-item-padding-20-px"
               >
 
                 {/* <LibraryItem song={SongData[Playlists[0].songs[0]]}/> */}

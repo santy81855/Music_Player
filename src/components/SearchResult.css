@@ -11,6 +11,21 @@
   text-align: left;
 }
 
+.SearchResult:hover {
+  width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
+  height: var(--aud-Search-height);
+  background-color: var(--aud-error);
+
+  opacity: 0.5;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: start;
+  justify-content: start;
+  text-align: left;
+}
+
 /* ========================= Left ========================= */
 .LeftBox {
   width: var(--aud-Search-left-width);
