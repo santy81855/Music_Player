@@ -6,7 +6,6 @@ import PlayBar from './PlayBar';
 import Playlists from '../databases/songs/playlists.json';
 import {useAuth0} from '@auth0/auth0-react';
 
-
 import settingsPNG from '../icons/settings.png';
 import settingsSelectPNG from '../icons/settings_selected.png';
 
