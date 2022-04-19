@@ -23,7 +23,6 @@ class StatusBar extends React.Component {
       currentuser: null
     }
   }
-
   componentDidMount(){
     window.user = this.props.curUser
     var relevantusers = db.collection('users').where('id', '==', window.user.sub);
@@ -43,6 +42,8 @@ class StatusBar extends React.Component {
         id: this.props.curUser.sub,
         firstname: this.props.curUser.nickname,
         lastname: this.props.curUser.nickname,
+        latitude: this.props.userLatitude,
+        longitude: this.props.userLongitude,
         playlists: []
       })
     }
