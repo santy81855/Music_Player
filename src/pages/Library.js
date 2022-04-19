@@ -17,10 +17,11 @@ const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 5
+    items: 4.05
   },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1000 },
+    // items: 4.05,
     items: 3
   },
   tablet: {
@@ -46,6 +47,7 @@ class Library extends Component {
             <div className="LibraryGalleryCenter">
               {/* Songs */}
               <Carousel
+                partialVisible={false}
                 swipeable={false}
                 draggable={false}
                 showDots={false}
@@ -60,12 +62,11 @@ class Library extends Component {
                 containerClass="LibraryGalleryCenter"
                 deviceType={this.props.deviceType}
                 dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-20-px"
+                itemClass="carousel-item-padding-40-px"
               >
                 {/* {userSongs} */}
                 { Playlists[0].songs.map(
                     (songIndex) => {
-                      console.log("AHH:", songIndex)
                       return(
                         <React.Fragment key={SongData[songIndex].id}>
                           <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>
@@ -110,7 +111,6 @@ class Library extends Component {
                 {/* {userPlaylists} */}
                 { Playlists.map(
                     (userPlaylist) => {
-                      console.log("AHH:", userPlaylist)
                       return(
                         <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
                           <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>

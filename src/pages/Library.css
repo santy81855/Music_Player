@@ -64,3 +64,9 @@
   justify-content: start;
   text-align: center;
 }
+
+/* This does change the spacing between LibraryItems, but then the step-size is off */
+/* .react-multi-carousel-item{
+  max-width: calc(300px + 150px);
+  min-width: calc(300px + 150px);
+} */
