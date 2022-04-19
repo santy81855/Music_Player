@@ -19,7 +19,7 @@ class MainPage extends React.Component {
   }
   
   pages = [ <Settings user={this.props.user} />,
-            <Library user={this.props.user} />,
+            <Library user={this.props.user} callback={this.handleCallback}/>,
             <SearchSong user={this.props.user} callback={this.handleCallback}/>,
             <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
             <SearchArtist user={this.props.user} callback={this.handleCallback}/>

@@ -1,17 +1,55 @@
 import './LibraryItem.css';
 import React from 'react';
-import songPNG from '../icons/song.png';
+import SongData from '../databases/songs/songs.json';
+
 
 class LibraryItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
+  
+  loadSong = () => {
+    this.props.callback(this.props.song);
+  };
+
+  loadPlaylist = () => {
+    console.log(SongData[this.props.playlist.songs[0]]);
+    this.props.callback(SongData[this.props.playlist.songs[0]]);
+  };
+  
   render() {
-    return (
-      <div className="LibraryItem" style={{ backgroundImage: `url(${songPNG})` }}>
-        {/* <img className="Cover" src={songPNG} alt="item"/> */}
-        <div className="TagBar">
-          Text
+    if (this.props.song != null)
+    {
+      return (
+        <div
+          className="LibraryItem" 
+          style={{ backgroundImage: `url(${this.props.song.cover_art})` }}
+          onClick={this.loadSong}
+        >
+          <div className="TagBar">
+            <div className="Title"> "{this.props.song.title}" </div>
+            <div className="Artist"> By: {this.props.song.artist} </div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+    else if (this.props.playlist != null)
+    {
+      // console.log("PL:", SongData[this.props.playlist.songs[0]].cover_art);
+      return (
+        <div
+          className="LibraryItem" 
+          style={{ backgroundImage: `url(${SongData[this.props.playlist.songs[0]].cover_art})` }}
+          onClick={this.loadPlaylist}
+        >
+          <div className="TagBar">
+            <div className="Title"> "{this.props.playlist.name}" </div>
+            <div className="Artist"> By: {SongData[this.props.playlist.songs[0]].artist} </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

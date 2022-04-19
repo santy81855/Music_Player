@@ -1,14 +1,16 @@
 import React, { Component} from 'react';
 import './Library.css';
-import songPNG from '../icons/song.png';
+import songSelectedPNG from '../icons/song_selected.png';
 import playlistPNG from '../icons/playlist.png';
 import LibraryItem from '../components/LibraryItem.js'
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-// import Playlists from '../databases/songs/playlists.json';
+import Playlists from '../databases/songs/playlists.json';
+import SongData from '../databases/songs/songs.json';
 // playlist={Playlists[0]}
+
 
 
 
@@ -55,25 +57,24 @@ class Library extends Component {
                 autoPlay={false} // This is a lie apparently
                 autoPlaySpeed={600000} // 10 minutes, to make it not autoPlay.
                 keyBoardControl={false}
-                transitionDuration={500}
+                transitionDuration={100}
                 containerClass="LibraryGalleryCenter"
                 deviceType={this.props.deviceType}
                 dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
+                itemClass="carousel-item-padding-20-px"
               >
-                <img
-                  src={songPNG}
-                  alt="icon"
-                  className="PNG"
-                  style={{width:300, height: 300, background: "gold"}}
-                  onClick={() => console.log(this.props)}
-                />
-
-                <LibraryItem/>
-                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
-                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
-                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
-                {/* <img src={songPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} /> */}
+                {/* {userSongs} */}
+                { Playlists[0].songs.map(
+                    (songIndex) => {
+                      console.log("AHH:", songIndex)
+                      return(
+                        <React.Fragment key={SongData[songIndex].id}>
+                          <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>
+                        </React.Fragment>
+                      )
+                    }
+                  )
+                }
               </Carousel>
             </div>
           </div>
@@ -82,7 +83,7 @@ class Library extends Component {
 
           <div className="LibraryGallery">
             <div className="LibraryGalleryCenter">
-              {/* PlayLists */}
+              {/* Songs */}
               <Carousel
                 swipeable={false}
                 draggable={false}
@@ -94,21 +95,31 @@ class Library extends Component {
                 autoPlay={false} // This is a lie apparently
                 autoPlaySpeed={600000} // 10 minutes, to make it not autoPlay.
                 keyBoardControl={false}
-                transitionDuration={500}
+                transitionDuration={100}
                 containerClass="LibraryGalleryCenter"
                 deviceType={this.props.deviceType}
                 dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
+                itemClass="carousel-item-padding-20-px"
               >
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "gold"}} />
-                <img src={playlistPNG} className="PNG" alt="icon" style={{width:300, height: 300, background: "black"}} />
+
+                {/* <LibraryItem song={SongData[Playlists[0].songs[0]]}/> */}
+                {/* <LibraryItem song={SongData[Playlists[0].songs[1]]}/> */}
+                {/* <LibraryItem song={SongData[Playlists[0].songs[2]]}/> */}
+                {/* <LibraryItem song={SongData[Playlists[0].songs[3]]}/> */}
+                {/* <LibraryItem song={SongData[Playlists[0].songs[4]]}/> */}
+
+                {/* {userPlaylists} */}
+                { Playlists.map(
+                    (userPlaylist) => {
+                      console.log("AHH:", userPlaylist)
+                      return(
+                        <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
+                          <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
+                        </React.Fragment>
+                      )
+                    }
+                  )
+                }
               </Carousel>
             </div>
           </div>

@@ -1,12 +1,15 @@
 .LibraryItem {
-  width:300;
-  height: 300; 
+  width: 300px;
+  height: 300px; 
   background-color: var(--aud-secondary);
+  /* background-image: url('../icons/song.png'); */
 
+
+  position: relative;
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 }
 
 .Cover {
@@ -14,14 +17,34 @@
 
   display: flex;
   flex-direction: column;
-  align-items: end;
-  justify-content: center;
+  align-items: start;
+  justify-content: end;
   /* text-align: center; */
 }
 
 .TagBar {
   height: 300px;
   width: 300px;
-
   background-color: var(--aud-background);
+  opacity: 0.00;
 }
+
+.TagBar:hover {
+  height: 300px;
+  width: 300px;
+  background-color: var(--aud-background);
+  opacity: 0.75;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .Title {
+  font-size: 30px;
+}
+
+.Artist {
+  font-size: 18px;
+} */
