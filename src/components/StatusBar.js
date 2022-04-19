@@ -61,7 +61,8 @@ class StatusBar extends React.Component {
     }
     else{
       console.log(this.props.curUser);
-      if(this.props.curUser.sub.contains("google")){
+      if(this.props.curUser.sub.includes("google")){
+        console.log('google')
         db.collection('users').add({
           id: this.props.curUser.sub,
           firstname: this.props.curUser.given_name,
