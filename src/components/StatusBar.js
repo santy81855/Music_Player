@@ -38,11 +38,11 @@ class StatusBar extends React.Component {
       return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
     }
     else{
-      console.log('database adding');
+      console.log( this.props.curUser);
       db.collection('users').add({
-        id: window.user.sub,
-        firstname: window.user.given_name,
-        lastname: window.user.family_name,
+        id: this.props.curUser.sub,
+        firstname: this.props.curUser.nickname,
+        lastname: this.props.curUser.nickname,
         playlists: []
       })
     }
