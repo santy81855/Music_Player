@@ -5,6 +5,7 @@ import SearchResult from '../components/SearchResult.js';
 
 
 function SearchSong(props) {
+  // New usestate?
   const [searchTerm, setSearchTerm] = useState("")
 
   return(
@@ -22,7 +23,22 @@ function SearchSong(props) {
               if(searchTerm === "") {
                 return song
               }
+              // If statements in here, props, check if prop is null
+              // if year is not empty, && song release year > props release year (for min year)
+              // use state with array inside, checkbox pushes value to array, unchecking pulls value out of array
+              // use includes
               else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                if (props.genre !== null) {
+                  if (props.genre.toLowerCase().includes(song.genre.toLowerCase())) {
+                    return song;
+                  }
+                }
+                if (props.minyear !== null) {
+                  if (song.release_year > props.minyear) {
+                    return song;
+                  }
+
+                }
                 return song;
               }
             }
