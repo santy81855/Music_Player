@@ -31,7 +31,7 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 2,
+      page: 1,
     };
 
     this.toSettings = this.toSettings.bind(this);
