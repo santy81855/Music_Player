@@ -28,8 +28,8 @@ class LibraryItem extends React.Component {
           onClick={this.loadSong}
         >
           <div className="TagBar">
-            <div className="Title"> "{this.props.song.title}" </div>
-            <div className="Artist"> By: {this.props.song.artist} </div>
+            <div className="LibraryItemTitle"> "{this.props.song.title}" </div>
+            <div className="LibraryItemArtist"> By: {this.props.song.artist} </div>
           </div>
         </div>
       );
@@ -44,8 +44,8 @@ class LibraryItem extends React.Component {
           onClick={this.loadPlaylist}
         >
           <div className="TagBar">
-            <div className="Title"> "{this.props.playlist.name}" </div>
-            <div className="Artist"> By: {SongData[this.props.playlist.songs[0]].artist} </div>
+            <div className="LibraryItemTitle"> "{this.props.playlist.name}" </div>
+            <div className="LibraryItemArtist"> By: {SongData[this.props.playlist.songs[0]].artist} </div>
           </div>
         </div>
       );
