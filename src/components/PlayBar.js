@@ -17,7 +17,7 @@ function PlayBar(props) {
 
   const handleClickNext = () => {
     setTrackIndex((currentTrack) =>
-      currentTrack < props.playlist.songs.length - 1 ? currentTrack + 1 : 0
+      props.playlist && (currentTrack < props.playlist.songs.length - 1) ? currentTrack + 1 : 0
     );
   };
 

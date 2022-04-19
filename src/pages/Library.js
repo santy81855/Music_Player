@@ -65,7 +65,7 @@ class Library extends Component {
                 {/* {userSongs} */}
                 { Playlists[0].songs.map(
                     (songIndex) => {
-                      console.log("AHH:", songIndex)
+                      //console.log("AHH:", songIndex)
                       return(
                         <React.Fragment key={SongData[songIndex].id}>
                           <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>

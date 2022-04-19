@@ -48,6 +48,7 @@ class StatusBar extends React.Component {
   }
 
   componentDidMount(){
+    console.log("lmao: ", this.props.curUser)
     window.user = this.props.curUser
     var relevantusers = db.collection('users').where('id', '==', window.user.sub);
     window.user = relevantusers.get().then((querySnapshot) => {
@@ -57,17 +58,26 @@ class StatusBar extends React.Component {
         //console.log("foreach",doc.data())
         items.push(doc.data())
       })
-      console.log("HI:", items[0].firstname);
+      console.log("HI:", items[0]);
       return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
     }
     else{
-      console.log( this.props.curUser);
-      db.collection('users').add({
-        id: this.props.curUser.sub,
-        firstname: this.props.curUser.nickname,
-        lastname: this.props.curUser.nickname,
-        playlists: []
-      })
+      console.log(this.props.curUser);
+      if(this.props.user.sub.includes("google")){
+        db.collection('users').add({
+          id: this.props.curUser.sub,
+          firstname: this.props.curUser.given_name,
+          lastname: this.props.curUser.family_name,
+          playlists: []
+        })
+      }else{
+        db.collection('users').add({
+          id: this.props.curUser.sub,
+          firstname: this.props.curUser.nickname,
+          lastname: this.props.curUser.nickname,
+          playlists: []
+        })
+      }
     }
   });
    
