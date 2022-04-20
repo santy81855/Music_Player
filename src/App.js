@@ -1,11 +1,6 @@
 import './App.css';
 import React from 'react';
 import Login from './components/Login';
-import StatusBar from './components/StatusBar';
-import {useAuth0} from '@auth0/auth0-react';
-import userbase from './databases/users.json';
-import db from "./firebase";
-
 
 function App() {
   document.title="Aud.io"

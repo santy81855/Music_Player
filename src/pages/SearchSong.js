@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import './SearchSong.css';
-import songData from '../databases/songs/songs.json';
+import SongData from '../databases/songs/songs.json';
 import SearchResult from '../components/SearchResult.js';
 import FilterPanel from '../components/FilterPanel.js';
 
@@ -44,7 +44,7 @@ function SearchSong(props) {
             placeholder="Search for song by Title"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          {songData.filter(
+          {SongData.filter(
             (song) => {
               // Use a flag to show if a song does not meet a condition
               let isShown = true;

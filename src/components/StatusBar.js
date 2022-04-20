@@ -1,12 +1,7 @@
 import './StatusBar.css';
-import React, { useEffect , useState} from 'react';
+import React from 'react';
 import NavBar from './NavBar.js';
-
-import Login from './Login.js';
-import {useAuth0} from '@auth0/auth0-react';
-import userData from '../databases/users.json';
 import db from '../firebase';
-import {getFirestore, doc, getDoc } from "firebase/firestore";
 
 class user{
   constructor(fname,lname,id,playlists){
@@ -23,8 +18,35 @@ class StatusBar extends React.Component {
       currentuser: null
     }
   }
+  // can index : playlists[index] to get object
+  // song id should be passed in since we only store index/id
+  addSongtoPlaylist(user,playlistid,song){
+    user.playlists[playlistid].push(song)
+  }
 
+  addPlaylist(user, playlistname){
+    user.playlists.push({
+      year: new Date().getFullYear(),
+      genre: "user",
+      songs: [],
+      "last-song": null,// needs to be redefined later
+      title: playlistname,
+      author: user.firstname
+    })
+  }
+  // pass in song id
+  updatePlaylistLastSong(user,playlist,song){
+    user.playlists[playlist]["last-song"] = song;
+  }
+
+  async updateUser(user){
+    db.collection("users").doc(user.id).update({
+      playlists: user.playlists
+    }).then(console.log('updated', user.firstname))
+  }
+  
   componentDidMount(){
+    console.log("lmao: ", this.props.curUser)
     window.user = this.props.curUser
     var relevantusers = db.collection('users').where('id', '==', window.user.sub);
     window.user = relevantusers.get().then((querySnapshot) => {
@@ -34,17 +56,30 @@ class StatusBar extends React.Component {
         //console.log("foreach",doc.data())
         items.push(doc.data())
       })
-      console.log("HI:", items[0].firstname);
+      //console.log("HI:", items[0]);
       return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
     }
     else{
-      console.log( this.props.curUser);
-      db.collection('users').add({
-        id: this.props.curUser.sub,
-        firstname: this.props.curUser.nickname,
-        lastname: this.props.curUser.nickname,
-        playlists: []
-      })
+      console.log(this.props.curUser)
+      if(this.props.curUser.sub.includes("google")){
+        db.collection('users').add({
+          id: this.props.curUser.sub,
+          firstname: this.props.curUser.given_name,
+          lastname: this.props.curUser.family_name,
+          latitude: this.props.userLatitude,
+          longitude: this.props.userLongitude,
+          playlists: []
+        })
+      }else{
+        db.collection('users').add({
+          id: this.props.curUser.sub,
+          firstname: this.props.curUser.nickname,
+          lastname: this.props.curUser.nickname,
+          latitude: this.props.userLatitude,
+          longitude: this.props.userLongitude,
+          playlists: []
+        })
+      }
     }
   });
    
@@ -60,7 +95,6 @@ class StatusBar extends React.Component {
         <div>
           <div className="StatusBar">
             {/*StatusBar*/}
-            StatusBar
           </div>
           <div className = "App-NavBar-and-MainPage">
             <NavBar user={this.state.currentuser}/>

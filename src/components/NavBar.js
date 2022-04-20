@@ -2,9 +2,6 @@ import './NavBar.css';
 import React from 'react';
 import NavBarIcon from './NavBarIcon.js';
 import MainPage from './MainPage';
-import PlayBar from './PlayBar';
-import Playlists from '../databases/songs/playlists.json';
-import {useAuth0} from '@auth0/auth0-react';
 
 import settingsPNG from '../icons/settings.png';
 import settingsSelectPNG from '../icons/settings_selected.png';
@@ -80,8 +77,11 @@ class NavBar extends React.Component {
 
   }
   render() {
-    console.log("in navbar",this.props.curUser);
-    
+    if(this.props.user){
+      console.log("in nav bar", this.props.user.playlists[0])
+    }else{
+      console.log("empty for now")
+    }
     return (
       <div className='fullContainer'>
         {/* NavBar */}
