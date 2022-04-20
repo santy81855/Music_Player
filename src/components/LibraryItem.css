@@ -4,6 +4,7 @@
   background-color: var(--aud-secondary);
   /* background-image: url('../icons/song.png'); */
   /* background-repeat: 'no-repeat'; */
+  cursor: pointer;
 
   position: relative;
   display: flex;

@@ -6,7 +6,7 @@ import StatusBar from './StatusBar';
 function Login(props){
     const {
       loginWithPopup, 
-      loginWithRedirect, 
+      // loginWithRedirect, 
       logout, 
       user, 
       isAuthenticated
