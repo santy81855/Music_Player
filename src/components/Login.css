@@ -9,3 +9,21 @@
     justify-content: center;
     text-align: center;
 }
+
+.loginButton {
+    height: 10%;
+    width: 20%;
+    min-width: 100px;
+    min-height: 50px;
+    border-style:double;
+    border-color: var(--aud-background);
+    border-radius: 105px;
+    background-color: var(--aud-secondary);
+    color: black;
+    font-size: 25pt; 
+}
+
+.loginButton:hover {
+    background-color: green;
+    color: white;
+}

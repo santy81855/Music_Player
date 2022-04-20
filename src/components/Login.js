@@ -31,9 +31,7 @@ function Login(props){
           Login Page
           <h1>Auth0 authentication</h1>
       
-          <button onClick={loginWithPopup}>Login with popup</button>
-        
-          <button onClick={logout}>Guest</button>
+          <button className = "loginButton" onClick={loginWithPopup}>Login</button>
         </div>
       </div>
 }
