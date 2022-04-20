@@ -37,7 +37,7 @@
   height: calc((var(--aud-Library-height) - 60px) / 2);
   /* min-width: calc(var(--aud-Library-width)); */
   /* min-height: calc((var(--aud-Library-height) - 60px) / 2); */
-  background-color: var(--aud-error);
+  /* background-color: var(--aud-error); */
 
   display: flex;
   flex-direction: row;
@@ -54,7 +54,7 @@
 
 .LibraryGalleryCenter {
   /* width: calc(var(--aud-Library-width) - var(--aud-Library-offset)); */
-  width: calc(var(--aud-Library-width));
+  width: calc(var(--aud-Library-width) - var(--aud-Library-offset));
   height: calc((var(--aud-Library-height) - 60px) / 2);
   background-color: var(--aud-primary);
 
@@ -64,3 +64,9 @@
   justify-content: start;
   text-align: center;
 }
+
+/* This does change the spacing between LibraryItems, but then the step-size is off */
+/* .react-multi-carousel-item{
+  max-width: calc(300px + 150px);
+  min-width: calc(300px + 150px);
+} */

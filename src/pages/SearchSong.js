@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import './SearchSong.css';
-import songData from '../databases/songs/songs.json';
+import SongData from '../databases/songs/songs.json';
 import SearchResult from '../components/SearchResult.js';
 
 
@@ -17,7 +17,7 @@ function SearchSong(props) {
             placeholder="Search for song by Title"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          {songData.filter(
+          {SongData.filter(
             (song) => {
               if(searchTerm === "") {
                 return song
