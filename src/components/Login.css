@@ -10,6 +10,12 @@
     text-align: center;
 }
 
+.StatusBarProxy {
+    width: 100vw;
+    height: calc(27px);
+    background-color: var(--aud-secondary);
+}
+
 .loginButton {
     height: 10%;
     width: 20%;
@@ -19,7 +25,9 @@
     border-color: var(--aud-background);
     border-radius: 105px;
     background-color: var(--aud-secondary);
-    color: black;
+    color: var(--aud-background);
+    font-style: italic;
+    font-weight: bold;
     font-size: 25pt; 
 }
 

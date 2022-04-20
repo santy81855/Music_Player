@@ -27,9 +27,10 @@ function Login(props){
       </div>
     :
       <div>
+        <div className="StatusBarProxy"/>
         <div className="Login">
-          Login Page
-          <h1>Auth0 authentication</h1>
+          {/* Auth0 Authentication */}
+          <h1>Aud.io Sign In:</h1>
       
           <button className = "loginButton" onClick={loginWithPopup}>Login</button>
         </div>
