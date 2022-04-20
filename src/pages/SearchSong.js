@@ -2,14 +2,40 @@ import React, { useState} from 'react';
 import './SearchSong.css';
 import songData from '../databases/songs/songs.json';
 import SearchResult from '../components/SearchResult.js';
+import FilterPanel from '../components/FilterPanel.js';
 
 
 function SearchSong(props) {
-  // New usestate?
   const [searchTerm, setSearchTerm] = useState("")
+  const [genres, setGenres] = useState([])
+  // 1900 and 2022 are min and max years, respectively for release year
+  const [minYear, setMinYear] = useState(1900)
+  const [maxYear, setMaxYear] = useState(2022)
+
+  // Function that filters the song genre with the genres array. 
+  // Used because songs can have multiple genres
+  const containsGenre = (songGenre) => {
+    let songGenres = songGenre.split(", ");
+    let filteredGenres = []
+    for (let i = 0; i < songGenres.length; i++) {
+      if (genres.includes(songGenres[i].toLowerCase())) {
+        filteredGenres.push(songGenres[i])
+      }
+    }
+    return filteredGenres.length > 0
+  }
 
   return(
       <div className="SearchSong">
+        <FilterPanel 
+          className="searchPanel" 
+          genres={genres} 
+          setGenres={setGenres} 
+          minYear={minYear}
+          setMinYear={setMinYear} 
+          maxYear={maxYear} 
+          setMaxYear={setMaxYear}
+        />
         <div className="ScrollView">
           <input
             autoFocus
@@ -20,26 +46,24 @@ function SearchSong(props) {
           />
           {songData.filter(
             (song) => {
-              if(searchTerm === "") {
-                return song
-              }
-              // If statements in here, props, check if prop is null
-              // if year is not empty, && song release year > props release year (for min year)
-              // use state with array inside, checkbox pushes value to array, unchecking pulls value out of array
-              // use includes
-              else if(song.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-                if (props.genre !== null) {
-                  if (props.genre.toLowerCase().includes(song.genre.toLowerCase())) {
-                    return song;
-                  }
-                }
-                if (props.minyear !== null) {
-                  if (song.release_year > props.minyear) {
-                    return song;
-                  }
+              // Use a flag to show if a song does not meet a condition
+              let isShown = true;
 
-                }
-                return song;
+              if (genres.length !== 0 && !containsGenre(song.genre)) {
+                isShown = false
+              }
+              // comparing int with string works lol
+              if (song.release_year < minYear) { 
+                isShown = false
+              }
+              if (song.release_year > maxYear) {
+                isShown = false;
+              }
+              if (!song.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                isShown = false;
+              }
+              if (isShown === true) {
+                return song
               }
             }
           ).map(
