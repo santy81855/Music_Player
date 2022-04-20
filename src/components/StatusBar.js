@@ -4,11 +4,13 @@ import NavBar from './NavBar.js';
 import db from '../firebase';
 
 class user{
-  constructor(fname,lname,id,playlists){
+  constructor(fname,lname,id,playlists, lat, long){
     this.firstname = fname;
     this.lastname = lname;
     this.id = id;
     this.playlists = playlists;
+    this.latitude = lat;
+    this.longitude = long;
   }
 }
 class StatusBar extends React.Component {
@@ -40,13 +42,19 @@ class StatusBar extends React.Component {
   }
 
   async updateUser(user){
-    db.collection("users").doc(user.id).update({
-      playlists: user.playlists
-    }).then(console.log('updated', user.firstname))
+    //console.log("uu",user)
+    db.collection("users").where("id", "==", user.id)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            doc.ref.update({
+              playlists: user.playlists
+            }) 
+        });
+   })
   }
   
   componentDidMount(){
-    console.log("lmao: ", this.props.curUser)
     window.user = this.props.curUser
     var relevantusers = db.collection('users').where('id', '==', window.user.sub);
     window.user = relevantusers.get().then((querySnapshot) => {
@@ -57,7 +65,7 @@ class StatusBar extends React.Component {
         items.push(doc.data())
       })
       //console.log("HI:", items[0]);
-      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
+      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists, this.props.userLatitude, this.props.userLongitude)
     }
     else{
       console.log(this.props.curUser)

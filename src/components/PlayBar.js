@@ -2,10 +2,21 @@ import './PlayBar.css';
 import React, {useState} from 'react';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import db from '../firebase';
 
 import SongData from '../databases/songs/songs.json';
 import PlayBarStyle from './PlayBarStyle.scss';
 
+async function updateUser(user){
+  console.log("uu",user)
+  db.collection("users").where("id", "==", user.id)
+  .get()
+  .then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+          doc.ref.update({playlists: user.playlists}) 
+      });
+ })
+}
 
 function PlayBar(props) { 
   const [trackIndex, setTrackIndex] = useState(0);
@@ -21,6 +32,11 @@ function PlayBar(props) {
     );
   };
 
+  /*if(props.user.playlists){
+    console.log('updating database w/ new song in playlist')
+    props.user.playlists[0].songs.push(1)
+    updateUser(props.user);
+  }*/
   if (props.song !== null)
   {
     return (

@@ -36,6 +36,7 @@ class MainPage extends React.Component {
           ];
   
   render() {
+
     return (
 
       <div className = "App-MainPage-and-PlayBar">
