@@ -37,7 +37,7 @@
   height: calc((var(--aud-Library-height) - 60px) / 2);
   /* min-width: calc(var(--aud-Library-width)); */
   /* min-height: calc((var(--aud-Library-height) - 60px) / 2); */
-  background-color: var(--aud-error);
+  /* background-color: var(--aud-error); */
 
   display: flex;
   flex-direction: row;
@@ -54,7 +54,7 @@
 
 .LibraryGalleryCenter {
   /* width: calc(var(--aud-Library-width) - var(--aud-Library-offset)); */
-  width: calc(var(--aud-Library-width));
+  width: calc(var(--aud-Library-width) - var(--aud-Library-offset));
   height: calc((var(--aud-Library-height) - 60px) / 2);
   background-color: var(--aud-primary);
 

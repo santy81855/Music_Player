@@ -58,7 +58,7 @@ class Library extends Component {
                 autoPlay={false} // This is a lie apparently
                 autoPlaySpeed={600000} // 10 minutes, to make it not autoPlay.
                 keyBoardControl={false}
-                transitionDuration={100}
+                transitionDuration={300}
                 containerClass="LibraryGalleryCenter"
                 deviceType={this.props.deviceType}
                 dotListClass="custom-dot-list-style"
@@ -99,7 +99,7 @@ class Library extends Component {
                 containerClass="LibraryGalleryCenter"
                 deviceType={this.props.deviceType}
                 dotListClass="custom-dot-list-style"
-                // itemClass="carousel-item-padding-20-px"
+                itemClass="carousel-item-padding-40-px"
               >
 
                 {/* <LibraryItem song={SongData[Playlists[0].songs[0]]}/> */}
