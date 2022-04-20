@@ -4,13 +4,15 @@ import NavBar from './NavBar.js';
 import db from '../firebase';
 
 class user{
-  constructor(fname,lname,id,playlists, lat, long){
+  constructor(fname,lname,id,playlists, lat, long, lastsong, lastplaylist){
     this.firstname = fname;
     this.lastname = lname;
     this.id = id;
     this.playlists = playlists;
     this.latitude = lat;
     this.longitude = long;
+    this.lastsong = lastsong;
+    this.lastplaylist = lastplaylist;
   }
 }
 class StatusBar extends React.Component {
@@ -29,26 +31,32 @@ class StatusBar extends React.Component {
   addPlaylist(user, playlistname){
     user.playlists.push({
       year: new Date().getFullYear(),
-      genre: "user",
-      songs: [],
+      genre: "user", // needs to be seen and updated
       "last-song": null,// needs to be redefined later
       title: playlistname,
-      author: user.firstname
+      author: user.firstname,
+      songs: []
     })
+    this.updateUser(user);
   }
+
   // pass in song id
-  updatePlaylistLastSong(user,playlist,song){
-    user.playlists[playlist]["last-song"] = song;
+  updatePlaylistLastSong(user,playlist,songid){
+    user.playlists[playlist]["last-song"] = songid;
+    user.lastplaylist = playlist
   }
 
   async updateUser(user){
-    //console.log("uu",user)
     db.collection("users").where("id", "==", user.id)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             doc.ref.update({
-              playlists: user.playlists
+              playlists: user.playlists,
+              longitude: user.longitude,
+              latitude: user.latitude,
+              lastsong: user.lastsong,
+              lastplaylist: user.lastplaylist
             }) 
         });
    })
@@ -61,14 +69,12 @@ class StatusBar extends React.Component {
     if(!querySnapshot.empty){
       let items = []
       querySnapshot.forEach((doc) => {
-        //console.log("foreach",doc.data())
         items.push(doc.data())
       })
-      //console.log("HI:", items[0]);
-      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists, this.props.userLatitude, this.props.userLongitude)
+      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists,
+        this.props.userLatitude, this.props.userLongitude, items[0].lastsong, items[0].lastplaylist);
     }
     else{
-      console.log(this.props.curUser)
       if(this.props.curUser.sub.includes("google")){
         db.collection('users').add({
           id: this.props.curUser.sub,
@@ -76,7 +82,13 @@ class StatusBar extends React.Component {
           lastname: this.props.curUser.family_name,
           latitude: this.props.userLatitude,
           longitude: this.props.userLongitude,
-          playlists: []
+          playlists: [{
+            title: "Liked Songs",
+            author: this.props.curUser.given_name,
+            songs: []
+          }],
+          lastsong: null,
+          lastplaylist: null
         })
       }else{
         db.collection('users').add({
@@ -85,7 +97,13 @@ class StatusBar extends React.Component {
           lastname: this.props.curUser.nickname,
           latitude: this.props.userLatitude,
           longitude: this.props.userLongitude,
-          playlists: []
+          playlists: [{
+            title: "Liked Songs",
+            author: this.props.curUser.given_name,
+            songs: []
+          }],
+          lastsong: null,
+          lastplaylist: null
         })
       }
     }
