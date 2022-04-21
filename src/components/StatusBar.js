@@ -31,7 +31,6 @@ class StatusBar extends React.Component {
 
   addPlaylist(user, playlistname){
     user.playlists.push({
-      //year: new Date().getFullYear(),
       title: playlistname,
       author: user.firstname,
       songs: []
