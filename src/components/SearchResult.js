@@ -12,11 +12,20 @@ class SearchResult extends React.Component {
     this.props.callback(this.props.song, null);
   };
   addSongtoPlaylist(playlistid,song){
-    if(this.props.user.playlists[playlistid] !== null &&
-      !this.props.user.playlists[playlistid].songs.includes(song)){
-      console.log(`pushing ${song} into playlist ${playlistid}`)
-      console.log(this.props.user.playlists[playlistid])
-      this.props.user.playlists[playlistid].songs.push(song)
+    if(this.props.user.playlists[playlistid] !== null){
+      if(!this.props.user.playlists[playlistid].songs.includes(song)){
+        console.log(`pushing ${song} into playlist ${playlistid}`)
+        console.log(this.props.user.playlists[playlistid])
+        this.props.user.playlists[playlistid].songs.push(song)
+      }else{
+        let newsongs = []
+        this.props.user.playlists[playlistid].songs.forEach(songid =>{
+          if(songid !== song){
+            newsongs.push(songid)
+          }
+        this.props.user.playlists[playlistid].songs = newsongs
+        })
+      }
       this.updateUser(this.props.user);
     }
   }
