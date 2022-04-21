@@ -33,7 +33,7 @@ class MainPage extends React.Component {
       this.setState({playlist: childPlaylistData})
     }
   }
-  
+
   render() {
     let pages = [ <Settings user={this.props.user} />,
                   <Library user={this.props.user} callback={this.handleCallback}/>,

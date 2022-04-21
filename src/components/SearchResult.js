@@ -1,6 +1,6 @@
 import './SearchResult.css';
 import React from 'react';
-
+import db from '../firebase'
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -11,7 +11,30 @@ class SearchResult extends React.Component {
   onTrigger = () => {
     this.props.callback(this.props.song, null);
   };
-  
+  addSongtoPlaylist(playlistid,song){
+    if(this.props.user.playlists[playlistid] !== null){
+      console.log(`pushing ${song} into playlist ${playlistid}`)
+      console.log(this.props.user.playlists[playlistid])
+      this.props.user.playlists[playlistid].songs.push(song)
+      this.updateUser(this.props.user);
+    }
+  }
+
+  async updateUser(user){
+    db.collection("users").where("id", "==", user.id)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            doc.ref.update({
+              playlists: user.playlists,
+              longitude: user.longitude,
+              latitude: user.latitude,
+              lastsong: user.lastsong,
+              lastplaylist: user.lastplaylist
+            }) 
+        });
+   })
+  }
   render() {
     return (
       <div className="SearchResultWrapper">
@@ -40,8 +63,14 @@ class SearchResult extends React.Component {
         </div>
 
         <div className="Buttons">
-          <div className="ActionButton" onClick={() => console.log("Like Song:", this.props.song.title)}/>
-          <div className="ActionButton" onClick={() => console.log("Add to Playlist:", this.props.song.title)}/>
+          <div className="ActionButton" onClick={() => {
+            console.log("Like Song:", this.props.song.title)
+            this.addSongtoPlaylist(0, this.props.song.id)
+            console.log(this.props.user)
+          }}/>
+          <div className="ActionButton" onClick={() => {
+            console.log("Add to Playlist:", this.props.song.title)
+          }}/>
         </div>
       </div>
     );

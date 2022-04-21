@@ -125,7 +125,7 @@ class Library extends Component {
                 { (this.props.user !== null)
                   ? this.props.user.playlists.map(
                       (userPlaylist) => {
-                        return(
+                        return (
                           <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
                             <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
                           </React.Fragment>
@@ -136,6 +136,7 @@ class Library extends Component {
                       No Playlists
                     </div>
                 }
+                <button className="addplaylistcanvas">Add PlayList</button>
               </Carousel>
             </div>
           </div>

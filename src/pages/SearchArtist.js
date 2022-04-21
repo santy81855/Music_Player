@@ -32,7 +32,7 @@ function SearchArtist(props) {
                 <React.Fragment key={song.id}>
                   <div className="ResultWrapper">
                     <div className="Divider"/>
-                    <SearchResult song={song} value={props.value} callback={props.callback}/>
+                    <SearchResult user={props.user} song={song} value={props.value} callback={props.callback}/>
                   </div>
                 </React.Fragment>
               )
