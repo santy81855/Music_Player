@@ -8,14 +8,32 @@ import SongData from '../databases/songs/songs.json';
 import PlayBarStyle from './PlayBarStyle.scss';
 
 async function updateUser(user){
-  console.log("uu",user)
+  console.log("updating user")
   db.collection("users").where("id", "==", user.id)
   .get()
   .then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
-          doc.ref.update({playlists: user.playlists}) 
+          doc.ref.update({
+            playlists: user.playlists,
+            longitude: user.longitude,
+            latitude: user.latitude,
+            lastsong: user.lastsong,
+            lastplaylist: user.lastplaylist
+          }) 
       });
  })
+}
+
+// pass in song id
+function updatePlaylistLastSong(user,playlistindex,songid){
+  user.lastsong = songid;
+  user.lastplaylist = playlistindex
+  updateUser(user)
+}
+
+function updateLastSong(user,songid){
+  user.lastsong = songid;
+  updateUser(user);
 }
 
 function PlayBar(props) { 
@@ -32,11 +50,6 @@ function PlayBar(props) {
     );
   };
 
-  /*if(props.user.playlists){
-    console.log('updating database w/ new song in playlist')
-    props.user.playlists[0].songs.push(1)
-    updateUser(props.user);
-  }*/
   if (props.song !== null)
   {
     return (
@@ -48,7 +61,7 @@ function PlayBar(props) {
           volume={0.5}
           src={props.song.mp3address}
           header={`Now Playing: "${props.song.title}" by ${props.song.artist}`}
-          // onPlay={() => console.log("onPlay:", props.song.title)}
+          onPlay={() => updateLastSong(props.user, props.song.id)}
           // onPause={() => console.log("onPause:", props.song.mp3address)}
           onClickPrevious={handleClickPrevious}
           onClickNext={handleClickNext}
@@ -72,7 +85,7 @@ function PlayBar(props) {
           src={SongData[props.playlist.songs[trackIndex]].mp3address}
           header={`Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}" by ${SongData[props.playlist.songs[trackIndex]].artist}`}
 
-          //onPlay={e => console.log("onPlay")}
+          onPlay={() => updatePlaylistLastSong(props.user, props.playlist, SongData[props.playlist.songs[trackIndex]].id)}
           //onPause={e=>console.log("pause")}
 
           // onPlay={() => console.log("onPlay:", SongData[props.playlist.songs[trackIndex]].title)}
