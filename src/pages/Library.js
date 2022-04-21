@@ -11,8 +11,6 @@ import 'react-multi-carousel/lib/styles.css';
 // playlist={Playlists[0]}
 
 
-
-
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -44,8 +42,7 @@ class Library extends Component {
   
   
   render() {
-    console.log("State:", this.state);
-    console.log("Props:", this.props);
+    //console.log("State:", this.state);
     return (
       <div className="Library">
         <div className="LibraryWrapper">

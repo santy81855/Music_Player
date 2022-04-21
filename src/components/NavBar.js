@@ -23,7 +23,6 @@ import artistSelectPNG from '../icons/artist_selected.png';
 // put in other file: "const {idx} = require('./NavBar.js');"
 // export var idx = 1;
 
-
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -61,8 +60,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log("State:", this.state);
-    console.log("Props:", this.props);
+    console.log("nb",this.props.user)
     return (
       <div className='fullContainer'>
         {/* NavBar */}

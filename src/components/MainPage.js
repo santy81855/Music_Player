@@ -35,6 +35,7 @@ class MainPage extends React.Component {
   }
 
   render() {
+    console.log(this.props.user)
     let pages = [ <Settings user={this.props.user} />,
                   <Library user={this.props.user} callback={this.handleCallback}/>,
                   <SearchSong user={this.props.user} callback={this.handleCallback}/>,

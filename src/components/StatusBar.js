@@ -127,11 +127,9 @@ class StatusBar extends React.Component {
       currentuser:res
     })
   })
-
   }
   render() {
-    console.log("State:", this.state);
-    console.log("Props:", this.props);
+    //console.log("sb",this.state.currentuser);
     return (
       <div>
         <div className="StatusBar">
