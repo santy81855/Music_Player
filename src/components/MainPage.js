@@ -10,6 +10,12 @@ import Playlists from '../databases/songs/playlists.json';
 
 
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    // console.log("Library:", this.props);
+  }
+  
   state = {
     song: null,
     playlist: Playlists[0],
@@ -30,11 +36,11 @@ class MainPage extends React.Component {
   
   render() {
     let pages = [ <Settings user={this.props.user} />,
-    <Library user={this.props.user} callback={this.handleCallback}/>,
-    <SearchSong user={this.props.user} callback={this.handleCallback}/>,
-    <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
-    <SearchArtist user={this.props.user} callback={this.handleCallback}/>
-  ];
+                  <Library user={this.props.user} callback={this.handleCallback}/>,
+                  <SearchSong user={this.props.user} callback={this.handleCallback}/>,
+                  <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
+                  <SearchArtist user={this.props.user} callback={this.handleCallback}/>
+                ];
     return (
 
       <div className = "App-MainPage-and-PlayBar">

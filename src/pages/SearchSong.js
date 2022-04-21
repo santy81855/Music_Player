@@ -11,7 +11,7 @@ function SearchSong(props) {
       <div className="SearchSong">
         <div className="ScrollView">
           <input
-            autoFocus
+            autoFocus={true}
             className="SearchBox"
             type="text"
             placeholder="Search for song by Title"
