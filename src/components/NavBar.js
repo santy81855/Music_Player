@@ -77,11 +77,7 @@ class NavBar extends React.Component {
 
   }
   render() {
-    if(this.props.user){
-      console.log("in nav bar", this.props.user.playlists[0])
-    }else{
-      console.log("empty for now")
-    }
+    console.log(this.props.user)
     return (
       <div className='fullContainer'>
         {/* NavBar */}
