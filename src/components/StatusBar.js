@@ -26,13 +26,12 @@ class StatusBar extends React.Component {
   // song id should be passed in since we only store index/id
   addSongtoPlaylist(user,playlistid,song){
     user.playlists[playlistid].push(song)
+    this.updateUser(user);
   }
 
   addPlaylist(user, playlistname){
     user.playlists.push({
-      year: new Date().getFullYear(),
-      genre: "user", // needs to be seen and updated
-      "last-song": null,// needs to be redefined later
+      //year: new Date().getFullYear(),
       title: playlistname,
       author: user.firstname,
       songs: []
@@ -41,9 +40,10 @@ class StatusBar extends React.Component {
   }
 
   // pass in song id
-  updatePlaylistLastSong(user,playlist,songid){
-    user.playlists[playlist]["last-song"] = songid;
-    user.lastplaylist = playlist
+  updatePlaylistLastSong(user,playlistindex,songid){
+    user.lastsong = songid;
+    user.lastplaylist = playlistindex
+    this.updateUser(user)
   }
 
   async updateUser(user){
@@ -99,7 +99,7 @@ class StatusBar extends React.Component {
           longitude: this.props.userLongitude,
           playlists: [{
             title: "Liked Songs",
-            author: this.props.curUser.given_name,
+            author: this.props.curUser.nickname,
             songs: []
           }],
           lastsong: null,
