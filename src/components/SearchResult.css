@@ -1,7 +1,7 @@
-.SearchResult {
+.SearchResultWrapper {
   width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
   height: var(--aud-Search-height);
-  background-color: var(--aud-error);
+  background-color: var(--aud-primary);
 
   display: flex;
   flex-direction: row;
@@ -11,12 +11,10 @@
   text-align: left;
 }
 
-.SearchResult:hover {
-  width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
+.SearchResult {
+  width: calc(var(--aud-Search-width) + var(--aud-Search-offset) - var(--aud-Search-button));
   height: var(--aud-Search-height);
   background-color: var(--aud-error);
-
-  opacity: 0.5;
 
   display: flex;
   flex-direction: row;
@@ -24,6 +22,12 @@
   align-content: start;
   justify-content: start;
   text-align: left;
+
+  cursor: pointer;
+}
+
+.SearchResult:hover {
+  opacity: 0.5;
 }
 
 /* ========================= Left ========================= */
@@ -93,4 +97,33 @@
   font-size: 18px;
   font-style: italic;
   font-weight: bold;
+}
+
+/* ========================= buttons ========================= */
+.Buttons {
+  width: calc(var(--aud-Search-button));
+  height: var(--aud-Search-height);
+  background-color: var(--aud-focus);
+
+  border-left: solid var(--aud-focus);
+  border-width: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: start;
+  justify-content: start;
+  text-align: left;
+}
+
+.ActionButton {
+  width: calc(var(--aud-Search-button));
+  height: calc(var(--aud-Search-height) / 2);
+  background-color: var(--aud-background);
+
+  cursor: pointer;
+}
+
+.ActionButton:hover {
+  opacity: 0.5;
 }

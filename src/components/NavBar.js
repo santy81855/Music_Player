@@ -30,6 +30,8 @@ class NavBar extends React.Component {
     this.state = {
       page: 1,
     };
+    this.props = props;
+    console.log("NavBar:", this.props);
 
     this.toSettings = this.toSettings.bind(this);
     this.toLibrary = this.toLibrary.bind(this);
@@ -38,46 +40,27 @@ class NavBar extends React.Component {
     this.toSearchArtist = this.toSearchArtist.bind(this);
   }
 
-  // TODO: We can remove all of these methods:
-  // Remove the 'idx' and let the onClick() method handle the setState()
   toSettings() {
     this.setState(state => ({ page: 0 }));
-
-    // idx = 0;
-    // console.log(idx);
-
   }
 
   toLibrary() {
     this.setState(state => ({ page: 1 }));
-    // idx = 1;
-    // console.log(idx);
   }
 
   toSearchSong() {
     this.setState(state => ({ page: 2 }));
-
-    // idx = 2;
-    // console.log(idx);
-
   }
 
   toSearchPlaylist() {
     this.setState(state => ({ page: 3 }));
-    // idx = 3;
-    // console.log(idx);
-
   }
 
   toSearchArtist() {
     this.setState(state => ({ page: 4 }));
-
-    // idx = 4;
-    // console.log(idx);
-
   }
+
   render() {
-    console.log(this.props.user)
     return (
       <div className='fullContainer'>
         {/* NavBar */}

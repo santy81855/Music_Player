@@ -36,6 +36,13 @@ const responsive = {
 
 class Library extends Component {
 // function Library(props) {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    console.log("Library:", this.props);
+  }
+  
+  
   render() {
     return (
       <div className="Library">
