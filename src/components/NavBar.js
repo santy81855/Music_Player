@@ -31,7 +31,7 @@ class NavBar extends React.Component {
       page: 1,
     };
     this.props = props;
-    console.log("NavBar:", this.props);
+    // console.log("NavBar:", this.props);
 
     this.toSettings = this.toSettings.bind(this);
     this.toLibrary = this.toLibrary.bind(this);
@@ -61,6 +61,8 @@ class NavBar extends React.Component {
   }
 
   render() {
+    console.log("State:", this.state);
+    console.log("Props:", this.props);
     return (
       <div className='fullContainer'>
         {/* NavBar */}

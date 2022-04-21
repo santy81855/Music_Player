@@ -49,8 +49,8 @@ class LibraryItem extends React.Component {
           onClick={this.loadPlaylist}
         >
           <div className="TagBar">
-            <div className="LibraryItemTitle"> "{this.props.playlist.name}" </div>
-            <div className="LibraryItemArtist"> By: {SongData[this.props.playlist.songs[0]].artist} </div>
+            <div className="LibraryItemTitle"> "{this.props.playlist.title}" </div>
+            <div className="LibraryItemArtist"> By: {this.props.playlist.author} </div>
           </div>
         </div>
       );
