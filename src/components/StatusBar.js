@@ -4,11 +4,15 @@ import NavBar from './NavBar.js';
 import db from '../firebase';
 
 class user{
-  constructor(fname,lname,id,playlists){
+  constructor(fname,lname,id,playlists, lat, long, lastsong, lastplaylist){
     this.firstname = fname;
     this.lastname = lname;
     this.id = id;
     this.playlists = playlists;
+    this.latitude = lat;
+    this.longitude = long;
+    this.lastsong = lastsong;
+    this.lastplaylist = lastplaylist;
   }
 }
 class StatusBar extends React.Component {
@@ -22,45 +26,54 @@ class StatusBar extends React.Component {
   // song id should be passed in since we only store index/id
   addSongtoPlaylist(user,playlistid,song){
     user.playlists[playlistid].push(song)
+    this.updateUser(user);
   }
 
   addPlaylist(user, playlistname){
     user.playlists.push({
-      year: new Date().getFullYear(),
-      genre: "user",
-      songs: [],
-      "last-song": null,// needs to be redefined later
       title: playlistname,
-      author: user.firstname
+      author: user.firstname,
+      songs: []
     })
+    this.updateUser(user);
   }
+
   // pass in song id
-  updatePlaylistLastSong(user,playlist,song){
-    user.playlists[playlist]["last-song"] = song;
+  updatePlaylistLastSong(user,playlistindex,songid){
+    user.lastsong = songid;
+    user.lastplaylist = playlistindex
+    this.updateUser(user)
   }
 
   async updateUser(user){
-    db.collection("users").doc(user.id).update({
-      playlists: user.playlists
-    }).then(console.log('updated', user.firstname))
+    db.collection("users").where("id", "==", user.id)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            doc.ref.update({
+              playlists: user.playlists,
+              longitude: user.longitude,
+              latitude: user.latitude,
+              lastsong: user.lastsong,
+              lastplaylist: user.lastplaylist
+            }) 
+        });
+   })
   }
   
   componentDidMount(){
-    console.log("lmao: ", this.props.curUser)
     window.user = this.props.curUser
     var relevantusers = db.collection('users').where('id', '==', window.user.sub);
     window.user = relevantusers.get().then((querySnapshot) => {
     if(!querySnapshot.empty){
       let items = []
       querySnapshot.forEach((doc) => {
-        //console.log("foreach",doc.data())
         items.push(doc.data())
       })
-      //console.log("HI:", items[0]);
-      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists)
+      return new user(items[0].firstname, items[0].lastname, items[0].id, items[0].playlists,
+        this.props.userLatitude, this.props.userLongitude, items[0].lastsong, items[0].lastplaylist);
     }
     else{
-      console.log(this.props.curUser)
       if(this.props.curUser.sub.includes("google")){
         db.collection('users').add({
           id: this.props.curUser.sub,
@@ -68,8 +81,22 @@ class StatusBar extends React.Component {
           lastname: this.props.curUser.family_name,
           latitude: this.props.userLatitude,
           longitude: this.props.userLongitude,
-          playlists: []
+          playlists: [{
+            title: "Liked Songs",
+            author: this.props.curUser.given_name,
+            songs: []
+          }],
+          lastsong: null,
+          lastplaylist: null
         })
+        //constructor(fname,lname,id,playlists, lat, long, lastsong, lastplaylist)
+        return new user(this.props.curUser.given_name,this.props.curUser.family_name,
+          this.props.curUser.sub,
+           [{
+            title: "Liked Songs",
+            author: this.props.curUser.given_name,
+            songs: []
+          }], this.props.userLatitude, this.props.userLongitude, null, null);
       }else{
         db.collection('users').add({
           id: this.props.curUser.sub,
@@ -77,8 +104,20 @@ class StatusBar extends React.Component {
           lastname: this.props.curUser.nickname,
           latitude: this.props.userLatitude,
           longitude: this.props.userLongitude,
-          playlists: []
+          playlists: [{
+            title: "Liked Songs",
+            author: this.props.curUser.nickname,
+            songs: []
+          }],
+          lastsong: null,
+          lastplaylist: null
         })
+        return new user(this.props.curUser.nickname,this.props.curUser.nickname,
+          this.props.curUser.sub, [{
+            title: "Liked Songs",
+            author: this.props.curUser.nickname,
+            songs: []
+          }], this.props.userLatitude, this.props.userLongitude, null, null);
       }
     }
   });
