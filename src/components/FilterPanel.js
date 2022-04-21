@@ -5,6 +5,7 @@ const FilterPanel = (props) => {
     const genres = ['Electronic', 'Jazz', 'Trap', 'Pop', 'EDM', 'Chill', 'Acoustic'];
 
     const handleMinYearChange = (e) => {
+        // Only update filter if user put in 4 digits
         if (e.target.value.length === 4) {
             props.setMinYear(e.target.value);
         }
@@ -14,6 +15,7 @@ const FilterPanel = (props) => {
     }
 
     const handleMaxYearChange = (e) => {
+        // Only update filter if user put in 4 digits
         if (e.target.value.length === 4) {
             props.setMaxYear(e.target.value);
         }
@@ -28,6 +30,7 @@ const FilterPanel = (props) => {
             props.setGenres([...props.genres, e.target.name.toLowerCase()]);
         }
         else {
+            // everything checked = nothing checked (why would you want to filter and display nothing?)
             props.setGenres(props.genres.filter(genre => genre !== e.target.name.toLowerCase()));
         }
     }
