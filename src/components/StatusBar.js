@@ -90,6 +90,14 @@ class StatusBar extends React.Component {
           lastsong: null,
           lastplaylist: null
         })
+        //constructor(fname,lname,id,playlists, lat, long, lastsong, lastplaylist)
+        return new user(this.props.curUser.given_name,this.props.curUser.family_name,
+          this.props.curUser.sub,
+           [{
+            title: "Liked Songs",
+            author: this.props.curUser.given_name,
+            songs: []
+          }], this.props.userLatitude, this.props.userLongitude, null, null);
       }else{
         db.collection('users').add({
           id: this.props.curUser.sub,
@@ -105,6 +113,12 @@ class StatusBar extends React.Component {
           lastsong: null,
           lastplaylist: null
         })
+        return new user(this.props.curUser.nickname,this.props.curUser.nickname,
+          this.props.curUser.sub, [{
+            title: "Liked Songs",
+            author: this.props.curUser.nickname,
+            songs: []
+          }], this.props.userLatitude, this.props.userLongitude, null, null);
       }
     }
   });
