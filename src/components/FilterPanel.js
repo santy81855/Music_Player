@@ -33,17 +33,29 @@ const FilterPanel = (props) => {
     }
 
     return(
-        <div className='filterPanel'>
-            <h4>Filter by Year:</h4>
-            <input onChange={handleMinYearChange} type="number" min="1900" max="2022" placeholder="Min. Year" step="1"/>
-            <input onChange={handleMaxYearChange} type="number" min="1900" max="2022" placeholder="Max. Year" step="1"/>
-            <h4>Filter by Genre:</h4>
-            <div id="checkboxes">
-               {genres.map(genre => {
-                return <label key = {genre} htmlFor={genre}>
-                    <input onChange={handleGenreChange} type="checkbox" name={genre}/>{genre}
-                </label>
+        <div className="FilterPanel">
+            {/* <div>Filter by Year:</div> */}
+            {/* <div>Filter by Genre:</div> */}
+            <div className="Checkbox" >
+                {genres.map(genre => {
+                    return (
+                        <label key = {genre} htmlFor={genre}>
+                            <input onChange={handleGenreChange} type="checkbox" name={genre}/>{genre}
+                        </label>
+                    );
                 })}
+            </div>
+            <div className="ReleaseYear">
+                <input
+                    className="ReleaseYearInput"
+                    onChange={handleMinYearChange}
+                    type="number" min="1900" max="2022"
+                    placeholder="Min Year" step="1"/>
+                <input
+                    className="ReleaseYearInput"
+                    onChange={handleMaxYearChange}
+                    type="number" min="1900" max="2022"
+                    placeholder="Max Year" step="1"/>
             </div>
         </div>
     )

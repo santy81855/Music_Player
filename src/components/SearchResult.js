@@ -71,9 +71,11 @@ class SearchResult extends React.Component {
           <div className = "RightBox">
             <div className="Genre">
               Genre: {this.props.song.genre}
+              {/* {this.props.song.genre} */}
             </div>
             <div className="Year">
-              Release year: {this.props.song.release_year}
+              Year: {this.props.song.release_year}
+              {/* {this.props.song.release_year} */}
             </div>
           </div>
         </div>
