@@ -139,13 +139,17 @@ class SearchResult extends React.Component {
               // Should be last playlist in users database
               //this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
               //this.forceUpdate()
-            }}>
+              }}>
               {({ ref }) => (
                 <input ref={ref} type="text" placeholder="Create New Playlist"
                   onKeyPress={e => {
                     if(e.key === 'Enter'){
                       this.addPlaylist(this.props.user,e.target.value)
                       this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
+                      this.forceUpdate()
+                      /*window.dispatchEvent(new KeyboardEvent('keydown', {
+                        'key': 'escape'
+                      }));*/
                     }
                   }}
                     /*onSubmit={(event)=>{
