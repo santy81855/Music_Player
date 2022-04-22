@@ -129,7 +129,7 @@ class SearchResult extends React.Component {
             </button>} transition>
             <MenuItem value="Create Playlist" onClick={() => {
               // Get user input for name
-              this.addPlaylist(this.props.user, "test")
+              this.addPlaylist(this.props.user, "Playlist " + this.props.user.playlists.length)
               // Should be last playlist in users database
               this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
               this.forceUpdate()
