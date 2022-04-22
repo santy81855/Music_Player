@@ -59,7 +59,7 @@ function SearchPlaylist(props) {
               if (song.release_year > maxYear) {
                 isShown = false;
               }
-              if(!song.homeplaylist.toLowerCase().includes(searchTerm.toLowerCase())) {
+              if (!song.homeplaylist.toLowerCase().includes(searchTerm.toLowerCase())) {
                 isShown = false;
               }
               if (isShown === true) {

@@ -6,6 +6,7 @@ import FilterPanel from '../components/FilterPanel.js';
 
 
 function SearchArtist(props) {
+  //console.log("SA",props.user)
   const [searchTerm, setSearchTerm] = useState("")
   const [genres, setGenres] = useState([])
   // 1900 and 2022 are min and max years, respectively for release year

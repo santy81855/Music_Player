@@ -1,6 +1,10 @@
 import './SearchResult.css';
 import React from 'react';
 import db from '../firebase'
+import {Menu, MenuItem, MenuButton, MenuGroup} from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
+import '@szhsin/react-menu/dist/transitions/slide.css';
+
 
 import likeSongPNG from '../icons/star.png';
 import likeSongSelectedPNG from '../icons/star_selected.png';
@@ -12,7 +16,18 @@ class SearchResult extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.state = {
+      open: false,
+      add: false
+    }
   }
+
+  addInputField = event => {
+    this.setState({
+      add: true
+    });
+    event.preventDefault();
+  };
   
   onTrigger = () => {
     this.props.callback(this.props.song, null);
@@ -36,6 +51,15 @@ class SearchResult extends React.Component {
     }
   }
 
+  addPlaylist(user, playlistname, song){
+    user.playlists.push({
+      title: playlistname,
+      author: user.firstname,
+      songs: []
+    })
+    this.updateUser(user);
+  }
+
   async updateUser(user){
     db.collection("users").where("id", "==", user.id)
     .get()
@@ -52,6 +76,7 @@ class SearchResult extends React.Component {
    })
   }
   render() {
+    //console.log("SR", this.props.user)
     return (
       <div className="SearchResultWrapper">
         <div className = "SearchResult" onClick={this.onTrigger} >
@@ -94,18 +119,37 @@ class SearchResult extends React.Component {
               style={{width: 50, height: 50}}
             />
           </div>
-          <div
-            className="PlaylistButton"
-            onClick={() => {
-              console.log("Add to Playlist:", this.props.song.title)
-            }}  
-          >
-            <img
-              src={false ? likePlaylistSelectedPNG : likePlaylistPNG}
-              alt={"img"}
-              style={{width: 40, height: 40}}
-            />
-          </div>
+          <Menu menuButton={
+            <button className="PlaylistButton">            
+              <img
+                src={false ? likePlaylistSelectedPNG : likePlaylistPNG}
+                alt={"img"}
+                style={{width: 40, height: 40}}
+              />
+            </button>} transition>
+            <MenuItem value="Create Playlist" onClick={() => {
+              // Get user input for name
+              this.addPlaylist(this.props.user, "test")
+              // Should be last playlist in users database
+              this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
+              this.forceUpdate()
+            }}>Create playlist</MenuItem>
+            {/* overflow in case user has many playlists*/}
+            <MenuGroup >
+            {
+              this.props.user.playlists.map(
+                (playlist, index) => {
+                    // Dont show liked songs as a possibility
+                    // How tf should i format this so it looks nice?
+                    return index === 0 ? null : (<MenuItem key = {index} value={playlist.title} onClick={() => {
+                      this.addSongtoPlaylist(index, this.props.song.id); 
+                      this.forceUpdate()
+                    }}>{playlist.title}</MenuItem>)
+                }
+              )
+            }
+            </MenuGroup>
+          </Menu>
         </div>
       </div>
     );
