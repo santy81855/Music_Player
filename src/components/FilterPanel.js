@@ -40,7 +40,7 @@ const FilterPanel = (props) => {
             <h4>Filter by Genre:</h4>
             <div id="checkboxes">
                {genres.map(genre => {
-                return <label for={genre}>
+                return <label key = {genre} htmlFor={genre}>
                     <input onChange={handleGenreChange} type="checkbox" name={genre}/>{genre}
                 </label>
                 })}

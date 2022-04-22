@@ -60,7 +60,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log("nb",this.props.user)
     return (
       <div className='fullContainer'>
         {/* NavBar */}
