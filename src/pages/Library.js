@@ -81,9 +81,7 @@ class Library extends Component {
                         )
                       }
                     )
-                  : <h1>
-                      No Songs
-                    </h1>
+                  : null
                 }
                 <LibraryItem
                   song={null} playlist={null} text={"Add Song"} 
@@ -130,12 +128,10 @@ class Library extends Component {
                           <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
                             <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
                           </React.Fragment>
-                        ): <h1 key = {userPlaylist.title}>{userPlaylist.title}</h1>
+                        ): null
                       }
                     )
-                  : <div>
-                      No Playlists
-                    </div>
+                  : null
                 }
                 {/* <button className="addplaylistcanvas">Add PlayList</button> */}
                 <LibraryItem

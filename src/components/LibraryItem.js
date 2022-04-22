@@ -41,21 +41,29 @@ class LibraryItem extends React.Component {
     else if (this.props.playlist != null)
     {
       // console.log("PL:", SongData[this.props.playlist.songs[0]].cover_art);
-      return (
-        <div
-          className="LibraryItem" 
-          style={{
-            backgroundImage: `url(${SongData[this.props.playlist.songs[0]].cover_art})`,
-            backgroundSize: '100% 100%',
-          }}
-          onClick={this.loadPlaylist}
-        >
-          <div className="TagBar">
-            <div className="LibraryItemTitle"> "{this.props.playlist.title}" </div>
-            <div className="LibraryItemArtist"> By: {this.props.playlist.author} </div>
+      
+      if (this.props.playlist.songs.length === 0)
+      {
+        return null;
+      }
+      else
+      {
+        return (
+          <div
+            className="LibraryItem" 
+            style={{
+              backgroundImage: `url(${SongData[this.props.playlist.songs[0]].cover_art})`,
+              backgroundSize: '100% 100%',
+            }}
+            onClick={this.loadPlaylist}
+          >
+            <div className="TagBar">
+              <div className="LibraryItemTitle"> "{this.props.playlist.title}" </div>
+              <div className="LibraryItemArtist"> By: {this.props.playlist.author} </div>
+            </div>
           </div>
-        </div>
-      );
+        );
+      }
     }
     // Case of both null, render "Add" button
     else 

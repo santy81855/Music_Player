@@ -1,7 +1,7 @@
 import './SearchResult.css';
 import React from 'react';
 import db from '../firebase'
-import {Menu, MenuItem, MenuButton, MenuGroup} from '@szhsin/react-menu';
+import {Menu, MenuItem, MenuButton, MenuGroup, FocusableItem} from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 
@@ -35,8 +35,6 @@ class SearchResult extends React.Component {
   addSongtoPlaylist(playlistid,song){
     if(this.props.user.playlists[playlistid] !== null){
       if(!this.props.user.playlists[playlistid].songs.includes(song)){
-        //console.log(`pushing ${song} into playlist ${playlistid}`)
-        //console.log(this.props.user.playlists[playlistid])
         this.props.user.playlists[playlistid].songs.push(song)
       }else{
         let newsongs = []
@@ -76,7 +74,6 @@ class SearchResult extends React.Component {
    })
   }
   render() {
-    //console.log("SR", this.props.user)
     return (
       <div className="SearchResultWrapper">
         <div className = "SearchResult" onClick={this.onTrigger} >
@@ -120,20 +117,49 @@ class SearchResult extends React.Component {
             />
           </div>
           <Menu menuButton={
+            /* need div not button
             <button className="PlaylistButton">            
               <img
                 src={false ? likePlaylistSelectedPNG : likePlaylistPNG}
                 alt={"img"}
                 style={{width: 40, height: 40}}
               />
-            </button>} transition>
-            <MenuItem value="Create Playlist" onClick={() => {
+            </button>*/
+            <div className="PlaylistButton">
+            <img
+              src={/*need to know if clicked or not*/ true ? likePlaylistPNG : likePlaylistSelectedPNG}
+              alt={"img"}
+              style={{width: 50, height: 50}}
+            />
+            </div>
+            } transition>
+            <FocusableItem value="Create Playlist" onClick={() => {
               // Get user input for name
-              this.addPlaylist(this.props.user, "Playlist " + this.props.user.playlists.length)
+              //this.addPlaylist(this.props.user, "test")
               // Should be last playlist in users database
-              this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
-              this.forceUpdate()
-            }}>Create playlist</MenuItem>
+              //this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
+              //this.forceUpdate()
+              }}>
+              {({ ref }) => (
+                <input ref={ref} type="text" placeholder="Create New Playlist"
+                  onKeyPress={e => {
+                    if(e.key === 'Enter'){
+                      this.addPlaylist(this.props.user,e.target.value)
+                      this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
+                      this.forceUpdate()
+                      /*window.dispatchEvent(new KeyboardEvent('keydown', {
+                        'key': 'escape'
+                      }));*/
+                    }
+                  }}
+                    /*onSubmit={(event)=>{
+                    this.addPlaylist(this.props.user,event.target.value)
+                    this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
+                    this.forceUpdate()
+                  }
+                }*/
+                />
+              )}</FocusableItem>
             {/* overflow in case user has many playlists*/}
             <MenuGroup >
             {
