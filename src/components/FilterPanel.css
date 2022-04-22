@@ -1,8 +1,50 @@
-.filterPanel{
-  margin: 0 auto;
-  text-align: center;
-  flex-flow: column;
+.FilterPanel{
+  width: var(--aud-Search-width);
+  /* height: 40px; */
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+  text-align: left;
 
   scroll-behavior: smooth;
   overflow-y: 'scroll';
+}
+
+.Checkbox {
+  width: calc(var(--aud-Search-width) - 220px);
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: start;
+  justify-content: space-evenly;
+  text-align: left;
+
+  font-style: italic;
+  font-weight: bold;
+}
+
+.ReleaseYear {
+  width: 220px;
+
+  background: var(--aud-background);
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.ReleaseYearInput {
+  background: var(--aud-background);
+  width: 100px;
+
+  color: var(--aud-text);
+  font-style: italic;
+  font-weight: bold;
 }

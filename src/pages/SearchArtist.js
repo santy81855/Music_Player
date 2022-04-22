@@ -29,6 +29,13 @@ function SearchArtist(props) {
   return(
       <div className="SearchArtist">
         <div className="ScrollView">
+          <input
+            autoFocus
+            className="SearchBox"
+            type="text"
+            placeholder="Search for song by Artist"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <FilterPanel 
             className="searchPanel" 
             genres={genres} 
@@ -37,13 +44,6 @@ function SearchArtist(props) {
             setMinYear={setMinYear} 
             maxYear={maxYear} 
             setMaxYear={setMaxYear}
-          />
-          <input
-            autoFocus
-            className="SearchBox"
-            type="text"
-            placeholder="Search for song by Artist"
-            onChange={(e) => setSearchTerm(e.target.value)}
           />
           {songData.filter(
            (song) => {

@@ -6,6 +6,12 @@ import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 
 
+import likeSongPNG from '../icons/star.png';
+import likeSongSelectedPNG from '../icons/star_selected.png';
+
+import likePlaylistPNG  from '../icons/small_add.png';
+import likePlaylistSelectedPNG  from '../icons/small_add_selected.png';
+
 class SearchResult extends React.Component {
   constructor(props) {
     super(props);
@@ -90,22 +96,37 @@ class SearchResult extends React.Component {
           <div className = "RightBox">
             <div className="Genre">
               Genre: {this.props.song.genre}
+              {/* {this.props.song.genre} */}
             </div>
             <div className="Year">
-              Release year: {this.props.song.release_year}
+              Year: {this.props.song.release_year}
+              {/* {this.props.song.release_year} */}
             </div>
           </div>
         </div>
 
         <div className="Buttons">
-          <div className={this.props.user.playlists[0].songs.includes(this.props.song.id)
-          ? "likedbutton" : "unlikedbutton"}  onClick={() => {
-            //console.log("Like Song:", this.props.song.title)
-            this.addSongtoPlaylist(0, this.props.song.id)
-            this.forceUpdate()
-            //console.log(this.props.user)
-          }}/>
-          <Menu menuButton={<MenuButton>Add song</MenuButton>} transition >
+          <div
+            className="SongButton"
+            onClick={() => {
+              this.addSongtoPlaylist(0, this.props.song.id)
+              this.forceUpdate()
+            }}
+          >
+            <img
+              src={this.props.user.playlists[0].songs.includes(this.props.song.id) ? likeSongSelectedPNG : likeSongPNG}
+              alt={"img"}
+              style={{width: 50, height: 50}}
+            />
+          </div>
+          <Menu menuButton={
+            <button className="PlaylistButton">            
+              <img
+                src={false ? likePlaylistSelectedPNG : likePlaylistPNG}
+                alt={"img"}
+                style={{width: 40, height: 40}}
+              />
+            </button>} transition>
             <MenuItem value="Create Playlist" onClick={() => {
               // Get user input for name
               this.addPlaylist(this.props.user, "test")

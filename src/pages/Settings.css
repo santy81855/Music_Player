@@ -28,6 +28,6 @@
 .logout:hover {
     background-image: linear-gradient(to right, #e1b20f,80%, green);
     border: 1px solid white;
-    cursor:crosshair;
+    cursor: pointer;
     color: white;
 }
