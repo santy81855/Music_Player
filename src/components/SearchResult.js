@@ -1,6 +1,10 @@
 import './SearchResult.css';
 import React from 'react';
 import db from '../firebase'
+import {Menu, MenuItem, MenuButton, MenuGroup} from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
+import '@szhsin/react-menu/dist/transitions/slide.css';
+
 
 class SearchResult extends React.Component {
   constructor(props) {
@@ -74,26 +78,6 @@ class SearchResult extends React.Component {
               Release year: {this.props.song.release_year}
             </div>
           </div>
-          <div className="containerlol">
-            {/* <button onClick={this.addPlaylist} style={{width:'100px', cursor:'pointer'}}> Add to playlist </button> */}
-            <button type="addplbutton">
-              ☰
-            </button>
-            {
-              this.state.open === true ?
-              <div className='dropdown'>
-              <ul>
-                <li>Create new Playlist</li>
-                {
-                  this.props.user.playlists ? this.props.user.playlists.forEach(pl => {
-                      <li>pl.title</li>
-                  }): null
-                }
-              </ul>
-              </div>
-              : null
-            } 
-          </div>
         </div>
 
         <div className="Buttons">
@@ -102,9 +86,20 @@ class SearchResult extends React.Component {
             this.addSongtoPlaylist(0, this.props.song.id)
             //console.log(this.props.user)
           }}/>
-          <div className="ActionButton" onClick={() => {
-            console.log("Add to Playlist:", this.props.song.title)
-          }}/>
+          <Menu menuButton={<MenuButton>Add song</MenuButton>} transition >
+            <MenuItem>Create playlist</MenuItem>
+            {/* overflow in case user has many playlists*/}
+            <MenuGroup >
+            {
+              this.props.user.playlists.map(
+                (playlist) => {
+                    // Dont show liked songs as a possibility
+                    return playlist === this.props.user.playlists[0] ? null : (<MenuItem key = {playlist}>{playlist.title}</MenuItem>)
+                }
+              )
+            }
+            </MenuGroup>
+        </Menu>
         </div>
       </div>
     );
