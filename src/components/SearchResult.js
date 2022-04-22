@@ -81,9 +81,11 @@ class SearchResult extends React.Component {
         </div>
 
         <div className="Buttons">
-          <div className="ActionButton" onClick={() => {
+          <div className={this.props.user.playlists[0].songs.includes(this.props.song.id)
+          ? "likedbutton" : "unlikedbutton"}  onClick={() => {
             //console.log("Like Song:", this.props.song.title)
             this.addSongtoPlaylist(0, this.props.song.id)
+            this.forceUpdate()
             //console.log(this.props.user)
           }}/>
           <Menu menuButton={<MenuButton>Add song</MenuButton>} transition >
