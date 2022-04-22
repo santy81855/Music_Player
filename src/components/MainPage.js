@@ -30,11 +30,11 @@ class MainPage extends React.Component {
   
   render() {
     let pages = [ <Settings user={this.props.user} />,
-            <Library user={this.props.user} callback={this.handleCallback}/>,
-            <SearchSong user={this.props.user} callback={this.handleCallback}/>,
-            <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
-            <SearchArtist user={this.props.user} callback={this.handleCallback}/>
-          ];
+    <Library user={this.props.user} callback={this.handleCallback}/>,
+    <SearchSong user={this.props.user} callback={this.handleCallback}/>,
+    <SearchPlaylist user={this.props.user} callback={this.handleCallback}/>,
+    <SearchArtist user={this.props.user} callback={this.handleCallback}/>
+  ];
     return (
 
       <div className = "App-MainPage-and-PlayBar">
