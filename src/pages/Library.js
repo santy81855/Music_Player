@@ -81,9 +81,7 @@ class Library extends Component {
                         )
                       }
                     )
-                  : <h1>
-                      No Songs
-                    </h1>
+                  : null
                 }
                 <LibraryItem
                   song={null} playlist={null} text={"Add Song"} 
@@ -133,9 +131,7 @@ class Library extends Component {
                         ): <h1 key = {userPlaylist.title}>{userPlaylist.title}</h1>
                       }
                     )
-                  : <div>
-                      No Playlists
-                    </div>
+                  : null
                 }
                 {/* <button className="addplaylistcanvas">Add PlayList</button> */}
                 <LibraryItem
