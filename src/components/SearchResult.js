@@ -87,14 +87,14 @@ class SearchResult extends React.Component {
             //console.log(this.props.user)
           }}/>
           <Menu menuButton={<MenuButton>Add song</MenuButton>} transition >
-            <MenuItem>Create playlist</MenuItem>
+            <MenuItem value="Create Playlist" onClick={(e) => console.log(`[MenuItem] ${e.value} clicked`)}>Create playlist</MenuItem>
             {/* overflow in case user has many playlists*/}
             <MenuGroup >
             {
               this.props.user.playlists.map(
                 (playlist) => {
                     // Dont show liked songs as a possibility
-                    return playlist === this.props.user.playlists[0] ? null : (<MenuItem key = {playlist}>{playlist.title}</MenuItem>)
+                    return playlist === this.props.user.playlists[0] ? null : (<MenuItem key = {playlist} value={playlist.title} onClick={(e) => console.log(`[MenuItem] ${e.value} clicked`)}>{playlist.title}</MenuItem>)
                 }
               )
             }
