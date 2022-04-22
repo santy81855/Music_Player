@@ -82,7 +82,7 @@ class Library extends Component {
                       }
                     )
                   : <h1>
-                      No Songs
+                      No Liked Songs
                     </h1>
                 }
                 <LibraryItem
