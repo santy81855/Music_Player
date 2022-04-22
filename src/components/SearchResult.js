@@ -11,9 +11,17 @@ class SearchResult extends React.Component {
     super(props);
     this.props = props;
     this.state = {
-      open: false
+      open: false,
+      add: false
     }
   }
+
+  addInputField = event => {
+    this.setState({
+      add: true
+    });
+    event.preventDefault();
+  };
   
   onTrigger = () => {
     this.props.callback(this.props.song, null);
@@ -99,7 +107,8 @@ class SearchResult extends React.Component {
           }}/>
           <Menu menuButton={<MenuButton>Add song</MenuButton>} transition >
             <MenuItem value="Create Playlist" onClick={() => {
-              this.addPlaylist(this.props.user, "your mom")
+              // Get user input for name
+              this.addPlaylist(this.props.user, "test")
               // Should be last playlist in users database
               this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
               this.forceUpdate()
