@@ -1,0 +1,8 @@
+.filterPanel{
+  margin: 0 auto;
+  text-align: center;
+  flex-flow: column;
+
+  scroll-behavior: smooth;
+  overflow-y: 'scroll';
+}

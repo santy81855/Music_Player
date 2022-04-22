@@ -11,8 +11,6 @@ import 'react-multi-carousel/lib/styles.css';
 // playlist={Playlists[0]}
 
 
-
-
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -36,7 +34,15 @@ const responsive = {
 
 class Library extends Component {
 // function Library(props) {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    // console.log("Library:", this.props);
+  }
+  
+  
   render() {
+    //console.log("State:", this.state);
     return (
       <div className="Library">
         <div className="LibraryWrapper">
@@ -65,15 +71,19 @@ class Library extends Component {
                 itemClass="carousel-item-padding-40-px"
               >
                 {/* {userSongs} */}
-                { Playlists[0].songs.map(
-                    (songIndex) => {
-                      return(
-                        <React.Fragment key={SongData[songIndex].id}>
-                          <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>
-                        </React.Fragment>
-                      )
-                    }
-                  )
+                { (this.props.user !== null)
+                  ? this.props.user.playlists[0].songs.map(
+                      (songIndex) => {
+                        return(
+                          <React.Fragment key={SongData[songIndex].id}>
+                            <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>
+                          </React.Fragment>
+                        )
+                      }
+                    )
+                  : <div>
+                      No Songs
+                    </div>
                 }
               </Carousel>
             </div>
@@ -109,16 +119,21 @@ class Library extends Component {
                 {/* <LibraryItem song={SongData[Playlists[0].songs[4]]}/> */}
 
                 {/* {userPlaylists} */}
-                { Playlists.map(
-                    (userPlaylist) => {
-                      return(
-                        <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
-                          <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
-                        </React.Fragment>
-                      )
-                    }
-                  )
+                { (this.props.user !== null)
+                  ? this.props.user.playlists.map(
+                      (userPlaylist) => {
+                        return (
+                          <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
+                            <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
+                          </React.Fragment>
+                        )
+                      }
+                    )
+                  : <div>
+                      No Playlists
+                    </div>
                 }
+                <button className="addplaylistcanvas">Add PlayList</button>
               </Carousel>
             </div>
           </div>

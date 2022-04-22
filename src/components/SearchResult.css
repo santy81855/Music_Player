@@ -1,7 +1,7 @@
-.SearchResult {
+.SearchResultWrapper {
   width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
   height: var(--aud-Search-height);
-  background-color: var(--aud-error);
+  background-color: var(--aud-primary);
 
   display: flex;
   flex-direction: row;
@@ -11,12 +11,10 @@
   text-align: left;
 }
 
-.SearchResult:hover {
-  width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
+.SearchResult {
+  width: calc(var(--aud-Search-width) + var(--aud-Search-offset) - var(--aud-Search-button));
   height: var(--aud-Search-height);
   background-color: var(--aud-error);
-
-  opacity: 0.5;
 
   display: flex;
   flex-direction: row;
@@ -24,6 +22,12 @@
   align-content: start;
   justify-content: start;
   text-align: left;
+
+  cursor: pointer;
+}
+
+.SearchResult:hover {
+  opacity: 0.5;
 }
 
 /* ========================= Left ========================= */
@@ -95,41 +99,31 @@
   font-weight: bold;
 }
 
-.containerlol {
-  position: relative;
-  display: inline-block;
+/* ========================= buttons ========================= */
+.Buttons {
+  width: calc(var(--aud-Search-button));
+  height: var(--aud-Search-height);
+  background-color: var(--aud-focus);
+
+  border-left: solid var(--aud-focus);
+  border-width: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: start;
+  justify-content: start;
+  text-align: left;
 }
-.addplbutton {
-  padding: 0;
-  width: 50px;
-  border: 0;
-  background-color: #fff;
-  color: #333;
+
+.ActionButton {
+  width: calc(var(--aud-Search-button));
+  height: calc(var(--aud-Search-height) / 2);
+  background-color: var(--aud-background);
+
   cursor: pointer;
-  outline: 0;
-  font-size: 40px;
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 300px;
-  z-index: 2;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-li {
-  padding: 8px 12px;
-}
-
-li:hover {
-  background-color: rgba(0, 0, 0, 0.14);
-  cursor: pointer;
+.ActionButton:hover {
+  opacity: 0.5;
 }

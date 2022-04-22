@@ -31,18 +31,18 @@ function SearchSong(props) {
 
   return(
       <div className="SearchSong">
-        <FilterPanel 
-          className="searchPanel" 
-          genres={genres} 
-          setGenres={setGenres} 
-          minYear={minYear}
-          setMinYear={setMinYear} 
-          maxYear={maxYear} 
-          setMaxYear={setMaxYear}
-        />
         <div className="ScrollView">
+          <FilterPanel 
+            className="searchPanel" 
+            genres={genres} 
+            setGenres={setGenres} 
+            minYear={minYear}
+            setMinYear={setMinYear} 
+            maxYear={maxYear} 
+            setMaxYear={setMaxYear}
+          />
           <input
-            autoFocus
+            autoFocus={true}
             className="SearchBox"
             type="text"
             placeholder="Search for song by Title"
@@ -76,8 +76,7 @@ function SearchSong(props) {
                 <React.Fragment key={song.id}>
                   <div className="ResultWrapper">
                     <div className="Divider"/>
-                    <SearchResult song={song} value={props.value} callback={props.callback} user ={props.user}/>
-                    {/* <button onClick={test(song)}>test</button> */}
+                    <SearchResult user={props.user} song={song} callback={props.callback}/>
                   </div>
                 </React.Fragment>
               )

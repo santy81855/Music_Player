@@ -16,7 +16,7 @@ function Settings(props) {
   return (
       <div className="Settings">
         {/* MainPage */}
-        <button className = "logout" onClick={logout}>Logout</button>   
+        <button className = "logout" onClick={logout} onMouseEnter={console.log("pwease dont leave 😢")}>Logout</button>   
       </div>
   );
 }
