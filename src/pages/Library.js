@@ -85,6 +85,10 @@ class Library extends Component {
                       No Songs
                     </h1>
                 }
+                <LibraryItem
+                  song={null} playlist={null} text={"Add Song"} 
+                  callback={() => console.log("Add Song")} 
+                />
               </Carousel>
             </div>
           </div>
@@ -133,7 +137,12 @@ class Library extends Component {
                       No Playlists
                     </div>
                 }
-                <button className="addplaylistcanvas">Add PlayList</button>
+                {/* <button className="addplaylistcanvas">Add PlayList</button> */}
+                <LibraryItem
+                  song={null} playlist={null} text={"Add Playlist"} 
+                  callback={() => console.log("Add Playlist")} 
+                />
+
               </Carousel>
             </div>
           </div>

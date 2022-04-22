@@ -2,6 +2,12 @@ import './SearchResult.css';
 import React from 'react';
 import db from '../firebase'
 
+import likeSongPNG from '../icons/star.png';
+import likeSongSelectedPNG from '../icons/star_selected.png';
+
+import likePlaylistPNG  from '../icons/small_add.png';
+import likePlaylistSelectedPNG  from '../icons/small_add_selected.png';
+
 class SearchResult extends React.Component {
   constructor(props) {
     super(props);
@@ -73,16 +79,31 @@ class SearchResult extends React.Component {
         </div>
 
         <div className="Buttons">
-          <div className={this.props.user.playlists[0].songs.includes(this.props.song.id)
-          ? "likedbutton" : "unlikedbutton"}  onClick={() => {
-            //console.log("Like Song:", this.props.song.title)
-            this.addSongtoPlaylist(0, this.props.song.id)
-            this.forceUpdate()
-            //console.log(this.props.user)
-          }}/>
-          <div className="addplaylistbutton" onClick={() => {
-            console.log("Add to Playlist:", this.props.song.title)
-          }}/>
+          <div
+            className="SongButton"
+            onClick={() => {
+              this.addSongtoPlaylist(0, this.props.song.id)
+              this.forceUpdate()
+            }}
+          >
+            <img
+              src={this.props.user.playlists[0].songs.includes(this.props.song.id) ? likeSongSelectedPNG : likeSongPNG}
+              alt={"img"}
+              style={{width: 50, height: 50}}
+            />
+          </div>
+          <div
+            className="PlaylistButton"
+            onClick={() => {
+              console.log("Add to Playlist:", this.props.song.title)
+            }}  
+          >
+            <img
+              src={false ? likePlaylistSelectedPNG : likePlaylistPNG}
+              alt={"img"}
+              style={{width: 40, height: 40}}
+            />
+          </div>
         </div>
       </div>
     );
