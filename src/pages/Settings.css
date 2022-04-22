@@ -11,5 +11,23 @@
   text-align: center;
 }
 .logout{
-  
+    height: 10%;
+    width: 20%;
+    min-width: 100px;
+    min-height: 50px;
+    border-style:double;
+    border-color: var(--aud-background);
+    border-radius: 105px;
+    background-color: var(--aud-secondary);
+    color: var(--aud-background);
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25pt; 
+}
+
+.logout:hover {
+    background-image: linear-gradient(to right, #e1b20f,80%, green);
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
 }

@@ -2,6 +2,8 @@ import './LibraryItem.css';
 import React from 'react';
 import SongData from '../databases/songs/songs.json';
 
+import AddPNG from '../icons/big_add.png';
+import AddSelectedPNG from '../icons/big_add_selected.png';
 
 class LibraryItem extends React.Component {
   constructor(props) {
@@ -49,8 +51,26 @@ class LibraryItem extends React.Component {
           onClick={this.loadPlaylist}
         >
           <div className="TagBar">
-            <div className="LibraryItemTitle"> "{this.props.playlist.name}" </div>
-            <div className="LibraryItemArtist"> By: {SongData[this.props.playlist.songs[0]].artist} </div>
+            <div className="LibraryItemTitle"> "{this.props.playlist.title}" </div>
+            <div className="LibraryItemArtist"> By: {this.props.playlist.author} </div>
+          </div>
+        </div>
+      );
+    }
+    // Case of both null, render "Add" button
+    else 
+    {
+      return(
+        <div
+          className="LibraryItem"
+          style={{
+            backgroundImage: `url(${AddPNG})`,
+            backgroundSize: '100% 100%',
+          }}
+          onClick={this.props.callback}
+        >
+          <div className="TagBar">
+            <div className="LibraryItemTitle"> {this.props.text} </div>
           </div>
         </div>
       );

@@ -1,7 +1,7 @@
-.SearchResult {
+.SearchResultWrapper {
   width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
   height: var(--aud-Search-height);
-  background-color: var(--aud-error);
+  background-color: var(--aud-primary);
 
   display: flex;
   flex-direction: row;
@@ -11,12 +11,10 @@
   text-align: left;
 }
 
-.SearchResult:hover {
-  width: calc(var(--aud-Search-width) + var(--aud-Search-offset));
+.SearchResult {
+  width: calc(var(--aud-Search-width) + var(--aud-Search-offset) - var(--aud-Search-button));
   height: var(--aud-Search-height);
   background-color: var(--aud-error);
-
-  opacity: 0.5;
 
   display: flex;
   flex-direction: row;
@@ -24,6 +22,12 @@
   align-content: start;
   justify-content: start;
   text-align: left;
+
+  cursor: pointer;
+}
+
+.SearchResult:hover {
+  opacity: 0.5;
 }
 
 /* ========================= Left ========================= */
@@ -94,3 +98,77 @@
   font-style: italic;
   font-weight: bold;
 }
+
+/* ========================= buttons ========================= */
+.Buttons {
+  width: calc(var(--aud-Search-button));
+  height: var(--aud-Search-height);
+  background-color: var(--aud-focus);
+
+  border-left: solid var(--aud-focus);
+  border-width: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.SongButton {
+  width: calc(var(--aud-Search-button));
+  height: calc(var(--aud-Search-height) / 2);
+  background-color: var(--aud-background);
+
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.SongButton:hover {
+  opacity: 0.5;
+}
+
+.PlaylistButton {
+  width: calc(var(--aud-Search-button));
+  height: calc(var(--aud-Search-height) / 2);
+  background-color: var(--aud-background);
+
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.PlaylistButton:hover {
+  opacity: 0.5;
+}
+
+/* .likedbutton:hover, .addplaylistbutton:hover , .unlikedbutton:hover{
+  opacity: 0.5;
+}
+.likedbutton{
+  background-image: url('../assets/likedsong.png');
+}
+.unlikedbutton{
+  background-image: url('../assets/unlikedsong.png');
+} 
+.addplaylistbutton{
+  background-image: url('../assets/unlikedsong.png');
+} */

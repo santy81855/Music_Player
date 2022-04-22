@@ -11,8 +11,6 @@ import 'react-multi-carousel/lib/styles.css';
 // playlist={Playlists[0]}
 
 
-
-
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -36,7 +34,15 @@ const responsive = {
 
 class Library extends Component {
 // function Library(props) {
+  constructor(props) {
+    super(props);
+    this.props = props;
+    // console.log("Library:", this.props);
+  }
+  
+  
   render() {
+    //console.log("State:", this.state);
     return (
       <div className="Library">
         <div className="LibraryWrapper">
@@ -65,16 +71,24 @@ class Library extends Component {
                 itemClass="carousel-item-padding-40-px"
               >
                 {/* {userSongs} */}
-                { Playlists[0].songs.map(
-                    (songIndex) => {
-                      return(
-                        <React.Fragment key={SongData[songIndex].id}>
-                          <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>
-                        </React.Fragment>
-                      )
-                    }
-                  )
+                { (this.props.user !== null && this.props.user.playlists[0].songs.length > 0)
+                  ? this.props.user.playlists[0].songs.map(
+                      (songIndex) => {
+                        return(
+                          <React.Fragment key={SongData[songIndex].id}>
+                            <LibraryItem song={SongData[songIndex]} playlist={null} callback={this.props.callback}/>
+                          </React.Fragment>
+                        )
+                      }
+                    )
+                  : <h1>
+                      No Songs
+                    </h1>
                 }
+                <LibraryItem
+                  song={null} playlist={null} text={"Add Song"} 
+                  callback={() => console.log("Add Song")} 
+                />
               </Carousel>
             </div>
           </div>
@@ -109,16 +123,26 @@ class Library extends Component {
                 {/* <LibraryItem song={SongData[Playlists[0].songs[4]]}/> */}
 
                 {/* {userPlaylists} */}
-                { Playlists.map(
-                    (userPlaylist) => {
-                      return(
-                        <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
-                          <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
-                        </React.Fragment>
-                      )
-                    }
-                  )
+                { (this.props.user !== null)
+                  ? this.props.user.playlists.map(
+                      (userPlaylist) => {
+                        return userPlaylist.songs.length > 0 ? (
+                          <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
+                            <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
+                          </React.Fragment>
+                        ): <h1 key = {userPlaylist.title}>{userPlaylist.title}</h1>
+                      }
+                    )
+                  : <div>
+                      No Playlists
+                    </div>
                 }
+                {/* <button className="addplaylistcanvas">Add PlayList</button> */}
+                <LibraryItem
+                  song={null} playlist={null} text={"Add Playlist"} 
+                  callback={() => console.log("Add Playlist")} 
+                />
+
               </Carousel>
             </div>
           </div>

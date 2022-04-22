@@ -127,19 +127,19 @@ class StatusBar extends React.Component {
       currentuser:res
     })
   })
-
   }
   render() {
-      return (
-        <div>
-          <div className="StatusBar">
-            {/*StatusBar*/}
-          </div>
-          <div className = "App-NavBar-and-MainPage">
-            <NavBar user={this.state.currentuser}/>
-          </div>
+    //console.log("sb",this.state.currentuser);
+    return (
+      <div>
+        <div className="StatusBar">
+          {/*StatusBar*/}
         </div>
-      );
+        <div className = "App-NavBar-and-MainPage">
+          <NavBar user={this.state.currentuser}/>
+        </div>
+      </div>
+    );
   }
 }
 
@@ -150,8 +150,6 @@ const retFun = async () => {
   console.log(val)
   return val
 }
-
-
 function StatusBar(props) {
   window.user = props.curUser
   var relevantusers = db.collection('users').where('id', '==', window.user.sub);
