@@ -71,7 +71,7 @@ class Library extends Component {
                 itemClass="carousel-item-padding-40-px"
               >
                 {/* {userSongs} */}
-                { (this.props.user !== null)
+                { (this.props.user !== null && this.props.user.playlists[0].songs.length > 0)
                   ? this.props.user.playlists[0].songs.map(
                       (songIndex) => {
                         return(
@@ -81,9 +81,9 @@ class Library extends Component {
                         )
                       }
                     )
-                  : <div>
+                  : <h1>
                       No Songs
-                    </div>
+                    </h1>
                 }
               </Carousel>
             </div>
@@ -122,11 +122,11 @@ class Library extends Component {
                 { (this.props.user !== null)
                   ? this.props.user.playlists.map(
                       (userPlaylist) => {
-                        return (
+                        return userPlaylist.songs.length > 0 ? (
                           <React.Fragment key={SongData[userPlaylist.songs[0]].id}>
                             <LibraryItem song={null} playlist={userPlaylist} callback={this.props.callback}/>
                           </React.Fragment>
-                        )
+                        ): <h1 key = {userPlaylist.title}>{userPlaylist.title}</h1>
                       }
                     )
                   : <div>
