@@ -17,8 +17,8 @@ class SearchResult extends React.Component {
   addSongtoPlaylist(playlistid,song){
     if(this.props.user.playlists[playlistid] !== null){
       if(!this.props.user.playlists[playlistid].songs.includes(song)){
-        console.log(`pushing ${song} into playlist ${playlistid}`)
-        console.log(this.props.user.playlists[playlistid])
+        //console.log(`pushing ${song} into playlist ${playlistid}`)
+        //console.log(this.props.user.playlists[playlistid])
         this.props.user.playlists[playlistid].songs.push(song)
       }else{
         let newsongs = []
@@ -98,9 +98,9 @@ class SearchResult extends React.Component {
 
         <div className="Buttons">
           <div className="ActionButton" onClick={() => {
-            console.log("Like Song:", this.props.song.title)
+            //console.log("Like Song:", this.props.song.title)
             this.addSongtoPlaylist(0, this.props.song.id)
-            console.log(this.props.user)
+            //console.log(this.props.user)
           }}/>
           <div className="ActionButton" onClick={() => {
             console.log("Add to Playlist:", this.props.song.title)
