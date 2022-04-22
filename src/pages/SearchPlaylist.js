@@ -27,16 +27,16 @@ function SearchPlaylist(props) {
 
   return(
       <div className="SearchPlaylist">
-        <FilterPanel 
-          className="searchPanel" 
-          genres={genres} 
-          setGenres={setGenres} 
-          minYear={minYear}
-          setMinYear={setMinYear} 
-          maxYear={maxYear} 
-          setMaxYear={setMaxYear}
-        />
         <div className="ScrollView">
+          <FilterPanel 
+            className="searchPanel" 
+            genres={genres} 
+            setGenres={setGenres} 
+            minYear={minYear}
+            setMinYear={setMinYear} 
+            maxYear={maxYear} 
+            setMaxYear={setMaxYear}
+          />
           <input
             autoFocus
             className="SearchBox"

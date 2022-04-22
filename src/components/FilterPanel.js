@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './FilterPanel.css';
 // Want multiple checkboxes for genre, minyear and maxyear text fields for release year
 const FilterPanel = (props) => {
     const genres = ['Electronic', 'Jazz', 'Trap', 'Pop', 'EDM', 'Chill', 'Acoustic'];
@@ -33,7 +33,7 @@ const FilterPanel = (props) => {
     }
 
     return(
-        <div>
+        <div className='filterPanel'>
             <h4>Filter by Year:</h4>
             <input onChange={handleMinYearChange} type="number" min="1900" max="2022" placeholder="Min. Year" step="1"/>
             <input onChange={handleMaxYearChange} type="number" min="1900" max="2022" placeholder="Max. Year" step="1"/>
