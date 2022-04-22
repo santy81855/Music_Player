@@ -59,7 +59,7 @@ function SearchPlaylist(props) {
               if (song.release_year > maxYear) {
                 isShown = false;
               }
-              if(!song.homeplaylist.toLowerCase().includes(searchTerm.toLowerCase())) {
+              if (!song.homeplaylist.toLowerCase().includes(searchTerm.toLowerCase())) {
                 isShown = false;
               }
               if (isShown === true) {
@@ -72,7 +72,7 @@ function SearchPlaylist(props) {
                 <React.Fragment key={song.id}>
                   <div className="ResultWrapper">
                     <div className="Divider"/>
-                    <SearchResult song={song} value={props.value} callback={props.callback}/>
+                    <SearchResult song={song} value={props.value} callback={props.callback} user={props.user}/>
                   </div>
                 </React.Fragment>
               )

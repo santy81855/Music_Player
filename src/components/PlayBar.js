@@ -37,6 +37,7 @@ function updateLastSong(user,songid){
 }
 
 function PlayBar(props) { 
+  //console.log("playbar", props.user)
   const [trackIndex, setTrackIndex] = useState(0);
   const handleClickPrevious = () => {
     setTrackIndex((currentTrack) =>
@@ -71,7 +72,7 @@ function PlayBar(props) {
       </div>
     );
   }
-  else if(props.playlist !== null)
+  else if (props.playlist !== null)
   {
     return (
       <div className="PlayBar">

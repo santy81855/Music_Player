@@ -8,7 +8,7 @@ import FilterPanel from '../components/FilterPanel.js';
 function SearchSong(props) {
   const [searchTerm, setSearchTerm] = useState("")
   const [genres, setGenres] = useState([])
-  // 1900 and 2022 are min and max years, respectively for release year
+  // 1900 and 2022 are min and max years respectively for release year
   const [minYear, setMinYear] = useState(1900)
   const [maxYear, setMaxYear] = useState(2022)
 
@@ -24,6 +24,10 @@ function SearchSong(props) {
     }
     return filteredGenres.length > 0
   }
+
+  // const test = () => {
+  //   console.log(props.song.title)
+  // }
 
   return(
       <div className="SearchSong">
@@ -72,7 +76,8 @@ function SearchSong(props) {
                 <React.Fragment key={song.id}>
                   <div className="ResultWrapper">
                     <div className="Divider"/>
-                    <SearchResult song={song} callback={props.callback}/>
+                    <SearchResult song={song} value={props.value} callback={props.callback} user ={props.user}/>
+                    {/* <button onClick={test(song)}>test</button> */}
                   </div>
                 </React.Fragment>
               )
