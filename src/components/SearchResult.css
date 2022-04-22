@@ -116,14 +116,24 @@
   text-align: left;
 }
 
-.ActionButton {
+.likedbutton , .addplaylistbutton, .unlikedbutton{
   width: calc(var(--aud-Search-button));
   height: calc(var(--aud-Search-height) / 2);
   background-color: var(--aud-background);
-
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
 }
-
-.ActionButton:hover {
+.likedbutton:hover, .addplaylistbutton:hover , .unlikedbutton:hover{
   opacity: 0.5;
+}
+.likedbutton{
+  background-image: url('../assets/likedsong.png');
+}
+.unlikedbutton{
+  background-image: url('../assets/unlikedsong.png');
+}
+.addplaylistbutton{
+  background-image: url('../assets/unlikedsong.png');
 }
