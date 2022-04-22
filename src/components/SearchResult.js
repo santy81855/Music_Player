@@ -37,6 +37,15 @@ class SearchResult extends React.Component {
     }
   }
 
+  addPlaylist(user, playlistname, song){
+    user.playlists.push({
+      title: playlistname,
+      author: user.firstname,
+      songs: []
+    })
+    this.updateUser(user);
+  }
+
   async updateUser(user){
     db.collection("users").where("id", "==", user.id)
     .get()
@@ -89,19 +98,28 @@ class SearchResult extends React.Component {
             //console.log(this.props.user)
           }}/>
           <Menu menuButton={<MenuButton>Add song</MenuButton>} transition >
-            <MenuItem value="Create Playlist" onClick={(e) => console.log(`[MenuItem] ${e.value} clicked`)}>Create playlist</MenuItem>
+            <MenuItem value="Create Playlist" onClick={() => {
+              this.addPlaylist(this.props.user, "your mom")
+              // Should be last playlist in users database
+              this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
+              this.forceUpdate()
+            }}>Create playlist</MenuItem>
             {/* overflow in case user has many playlists*/}
             <MenuGroup >
             {
               this.props.user.playlists.map(
-                (playlist) => {
+                (playlist, index) => {
                     // Dont show liked songs as a possibility
-                    return playlist === this.props.user.playlists[0] ? null : (<MenuItem key = {playlist} value={playlist.title} onClick={(e) => console.log(`[MenuItem] ${e.value} clicked`)}>{playlist.title}</MenuItem>)
+                    // How tf should i format this so it looks nice?
+                    return index === 0 ? null : (<MenuItem key = {index} value={playlist.title} onClick={() => {
+                      this.addSongtoPlaylist(index, this.props.song.id); 
+                      this.forceUpdate()
+                    }}>{playlist.title}</MenuItem>)
                 }
               )
             }
             </MenuGroup>
-        </Menu>
+          </Menu>
         </div>
       </div>
     );
