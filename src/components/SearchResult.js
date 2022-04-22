@@ -49,7 +49,12 @@ class SearchResult extends React.Component {
     }
   }
 
-  addPlaylist(user, playlistname, song){
+  addPlaylist(user, playlistname){
+    user.playlists.forEach(pl=>{
+      if(pl.title === playlistname)
+      console.log('no twin playlists')
+      return
+    })
     user.playlists.push({
       title: playlistname,
       author: user.firstname,
@@ -118,7 +123,7 @@ class SearchResult extends React.Component {
           </div>
           <Menu menuButton={
             /* need div not button
-            <button className="PlaylistButton">            
+            <button className="PlaylistButton">
               <img
                 src={false ? likePlaylistSelectedPNG : likePlaylistPNG}
                 alt={"img"}
@@ -127,7 +132,7 @@ class SearchResult extends React.Component {
             </button>*/
             <div className="PlaylistButton">
             <img
-              src={/*need to know if clicked or not*/ true ? likePlaylistPNG : likePlaylistSelectedPNG}
+              src={likePlaylistPNG}
               alt={"img"}
               style={{width: 50, height: 50}}
             />
@@ -147,17 +152,8 @@ class SearchResult extends React.Component {
                       this.addPlaylist(this.props.user,e.target.value)
                       this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
                       this.forceUpdate()
-                      /*window.dispatchEvent(new KeyboardEvent('keydown', {
-                        'key': 'escape'
-                      }));*/
                     }
                   }}
-                    /*onSubmit={(event)=>{
-                    this.addPlaylist(this.props.user,event.target.value)
-                    this.addSongtoPlaylist(this.props.user.playlists.length - 1, this.props.song.id)
-                    this.forceUpdate()
-                  }
-                }*/
                 />
               )}</FocusableItem>
             {/* overflow in case user has many playlists*/}
