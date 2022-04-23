@@ -121,7 +121,7 @@ class SearchResult extends React.Component {
               style={{width: 50, height: 50}}
             />
           </div>
-          <Menu menuButton={
+          <Menu overflow="auto" menuButton={
             /* need div not button
             <button className="PlaylistButton">
               <img
@@ -161,7 +161,7 @@ class SearchResult extends React.Component {
                 />
               )}</FocusableItem>
             {/* overflow in case user has many playlists*/}
-            <MenuGroup >
+            <MenuGroup takeOverflow>
             {
               this.props.user.playlists.map(
                 (playlist, index) => {
