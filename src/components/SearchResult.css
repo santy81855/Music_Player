@@ -160,15 +160,6 @@
   opacity: 0.5;
 }
 
-/* .likedbutton:hover, .addplaylistbutton:hover , .unlikedbutton:hover{
-  opacity: 0.5;
+.menucomp{
+  background: black;
 }
-.likedbutton{
-  background-image: url('../assets/likedsong.png');
-}
-.unlikedbutton{
-  background-image: url('../assets/unlikedsong.png');
-} 
-.addplaylistbutton{
-  background-image: url('../assets/unlikedsong.png');
-} */

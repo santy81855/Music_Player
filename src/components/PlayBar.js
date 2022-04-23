@@ -83,8 +83,8 @@ function PlayBar(props) {
           showDownloadProgress={false}
           autoPlay={false}
           volume={0.5}
-          src={SongData[props.playlist.songs[trackIndex]].mp3address}
-          header={`Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}" by ${SongData[props.playlist.songs[trackIndex]].artist}`}
+          src={props.playlist.songs.length > 0 ? SongData[props.playlist.songs[trackIndex]].mp3address : null}
+          header={props.playlist.songs.length > 0 ? `Now Playing: "${SongData[props.playlist.songs[trackIndex]].title}" by ${SongData[props.playlist.songs[trackIndex]].artist}` : `No songs in ${props.playlist.title}`}
 
           onPlay={() => updatePlaylistLastSong(props.user, props.playlist, SongData[props.playlist.songs[trackIndex]].id)}
           //onPause={e=>console.log("pause")}

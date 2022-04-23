@@ -136,9 +136,8 @@ class Library extends Component {
                 {/* <button className="addplaylistcanvas">Add PlayList</button> */}
                 <LibraryItem
                   song={null} playlist={null} text={"Add Playlist"} 
-                  callback={this.props.handleAdd} 
+                  callback={this.props.handleAdd}
                 />
-
               </Carousel>
             </div>
           </div>
